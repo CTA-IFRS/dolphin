@@ -1,0 +1,137 @@
+
+import { createMuiTheme } from "@material-ui/core/styles";
+
+export function getTheme(name) {
+    if (name === "commom") {
+        return createMuiTheme({
+            palette: {
+                type: "light",
+
+                text: {
+                    primary: "#000000",
+                    scondary: "#000000"
+                },
+
+                speakMessages: {
+                    main: "#729be7",
+                    contrastText: "#000000"
+                },
+        
+                listenMessages: {
+                    main: "#daaa71",
+                    contrastText: "#FFFFFF"
+                },
+
+                talkerActive: {
+                    main: "#00FF00"
+                },
+
+                talkerNotActive: {
+                    main: "#FF0000"
+                }
+            }
+        });
+
+    } else if (name === "highContrast"){
+        return createMuiTheme({
+            palette: {
+                type: "dark",
+        
+                primary: {
+                    main: "#000000",
+                    contrastText: "#FFFFFF"
+                },
+        
+                secondary: {
+                    main: "#000000",
+                    contrastText: "#FFFFFF"
+                },
+
+                text: {
+                    primary: "#FFFFFF",
+                    scondary: "#FFFFFF"
+                },
+
+                // background: {
+                //     default: "#000000"
+                // },
+        
+                speakMessages: {
+                    main: "#09214e",
+                    contrastText: "#FFFFFF"
+                },
+        
+                listenMessages: {
+                    main: "#5c3f19",
+                    contrastText: "#FFFFFF"
+                },
+
+                talkerActive: {
+                    main: "#00FF00"
+                },
+
+                talkerNotActive: {
+                    main: "#FF0000"
+                },
+        
+                contrastThreshold: 7,
+                tonalOffset: 0
+            }
+        });
+
+    } else if (name === "sepia") {
+        return createMuiTheme({
+            palette: {
+                type: "light",
+        
+                primary: {
+                    main: "#ffebcd",
+                    contrastText: "#000000"
+                },
+        
+                secondary: {
+                    main: "#ffebcd",
+                    contrastText: "#000000"
+                },
+
+                background: {
+                    paper: "#ffebcd",
+                    default: "#ffebcd"
+                },
+
+                text: {
+                    primary: "#000000",
+                    scondary: "#000000"
+                },
+
+                // action: {
+                //     focus: "#000000",
+                //     hover: "#000000",
+                //     active: "#000000",
+                //     selected: "#000000"
+                // },
+        
+                speakMessages: {
+                    main: "#729be7",
+                    contrastText: "#FFFFFF"
+                },
+        
+                listenMessages: {
+                    main: "#daaa71",
+                    contrastText: "#FFFFFF"
+                },
+
+                talkerActive: {
+                    main: "#00AA00"
+                },
+
+                talkerNotActive: {
+                    main: "#AA0000"
+                },
+        
+                contrastThreshold: 7,
+                tonalOffset: 0
+            }
+        });
+    }
+}
