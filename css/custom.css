@@ -23,6 +23,7 @@
     --cianoA3: #00E5FF;
     --cianoA4: #00E5FF;
     --cianoA5: #00B8D4;
+    --white: #ffffff;
 }
 
 
@@ -30,6 +31,11 @@
 
 
 /* a marcação dá um peso maior a regra, sobrescrevendo regras prévias */
+
+.bg-white,
+.btn-white {
+    background-color: var(--white);
+}
 
 .bg-ciano10,
 .btn-ciano10 {
