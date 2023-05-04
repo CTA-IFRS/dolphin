@@ -3193,19 +3193,19 @@ fieldset:disabled .btn {
 
 .btn-info {
     --bs-btn-color: #000;
-    --bs-btn-bg: #5b99ea;
-    --bs-btn-border-color: #5b99ea;
+    --bs-btn-bg: #54B4D3;
+    --bs-btn-border-color: #54B4D3;
     --bs-btn-hover-color: #000;
-    --bs-btn-hover-bg: #74a8ed;
-    --bs-btn-hover-border-color: #6ba3ec;
+    --bs-btn-hover-bg: #54B4D3;
+    --bs-btn-hover-border-color: #54B4D3;
     --bs-btn-focus-shadow-rgb: 77, 130, 199;
     --bs-btn-active-color: #000;
-    --bs-btn-active-bg: #7cadee;
-    --bs-btn-active-border-color: #6ba3ec;
+    --bs-btn-active-bg: #54B4D3;
+    --bs-btn-active-border-color: #54B4D3;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #000;
-    --bs-btn-disabled-bg: #5b99ea;
-    --bs-btn-disabled-border-color: #5b99ea;
+    --bs-btn-disabled-bg: #54B4D3;
+    --bs-btn-disabled-border-color: #54B4D3;
 }
 
 .btn-warning {
@@ -3325,17 +3325,17 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-info {
-    --bs-btn-color: #5b99ea;
-    --bs-btn-border-color: #5b99ea;
+    --bs-btn-color: #54B4D3;
+    --bs-btn-border-color: #54B4D3;
     --bs-btn-hover-color: #000;
-    --bs-btn-hover-bg: #5b99ea;
-    --bs-btn-hover-border-color: #5b99ea;
+    --bs-btn-hover-bg: #54B4D3;
+    --bs-btn-hover-border-color: #54B4D3;
     --bs-btn-focus-shadow-rgb: 91, 153, 234;
     --bs-btn-active-color: #000;
-    --bs-btn-active-bg: #5b99ea;
-    --bs-btn-active-border-color: #5b99ea;
+    --bs-btn-active-bg: #54B4D3;
+    --bs-btn-active-border-color: #54B4D3;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #5b99ea;
+    --bs-btn-disabled-color: #54B4D3;
     --bs-btn-disabled-bg: transparent;
     --bs-gradient: none;
 }
@@ -7379,7 +7379,7 @@ fieldset:disabled .btn {
 }
 
 .link-info {
-    color: #5b99ea !important;
+    color: #54B4D3 !important;
 }
 
 .link-info:hover,
@@ -12287,7 +12287,7 @@ a.text-link:hover {
 }
 
 .callout-block.callout-block-info {
-    border-color: #5b99ea;
+    border-color: #54B4D3;
     background: #f9fbfe;
 }
 
