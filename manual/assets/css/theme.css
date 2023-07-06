@@ -8650,18 +8650,6 @@ fieldset:disabled .btn {
     font-weight: 400 !important;
 }
 
-.fw-bold {
-    font-weight: 700 !important;
-}
-
-.fw-semibold {
-    font-weight: 600 !important;
-}
-
-.fw-bolder {
-    font-weight: bolder !important;
-}
-
 .lh-1 {
     line-height: 1 !important;
 }
@@ -11637,7 +11625,6 @@ a.text-link:hover {
 }
 
 .btn {
-    font-weight: 600;
     padding: 0.6rem 1.25rem;
     border: none;
 }
