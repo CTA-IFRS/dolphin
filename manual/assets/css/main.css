@@ -37,3 +37,7 @@ nav.barra-acessibilidade .btn-a11y {
     background-color: #026E81 !important;
     box-shadow: 0 0 0.5em #9ba0a5 !important;
 }
+
+#docs-nav .nav-link:hover {
+    color: #00838F;
+}
