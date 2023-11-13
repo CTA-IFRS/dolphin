@@ -27,7 +27,11 @@ export function getTheme(name) {
                 },
 
                 talkerNotActive: {
-                    main: "#FF0000"
+                    main: "#FFFFFF"
+                },
+
+                dolphinLogoColor: {
+                    color: 'white'
                 }
             }
         });
@@ -71,9 +75,14 @@ export function getTheme(name) {
                 },
 
                 talkerNotActive: {
-                    main: "#FF0000"
+                    main: "#FFFFFF"
+                },
+
+                dolphinLogoColor: {
+                    color: 'white'
                 },
         
+
                 contrastThreshold: 7,
                 tonalOffset: 0
             }
@@ -126,7 +135,11 @@ export function getTheme(name) {
                 },
 
                 talkerNotActive: {
-                    main: "#AA0000"
+                    main: "#000000"
+                },
+
+                dolphinLogoColor: {
+                    color: 'black'
                 },
         
                 contrastThreshold: 7,

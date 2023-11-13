@@ -9,6 +9,7 @@ import DolphinContent from "./components/DolphinContent";
 import { useTalkerMonitor } from "./components/hooks/Hooks";
 import { getTheme } from "./themes/Themes";
 
+
 function App() {
     const talkerMonitor = useTalkerMonitor(false, true);
     const [themeName, setTheme] = useState("commom");

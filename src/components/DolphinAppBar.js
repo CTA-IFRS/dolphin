@@ -28,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
 
     titleBar: {
         flexGrow: 1
+    },
+
+    dolphinLogoName: {
+        textDecoration: 'none',
+        color: theme.palette.dolphinLogoColor.color
     }
 }));
 
@@ -71,8 +76,13 @@ function DolphinAppBar(props) {
                             aria-expanded={drawerOpen}>
                 <MenuIcon />
                 </IconButton>
+
+                <a href="/" className={classes.dolphinLogoName}>
+                <img src={props.themeUpdater.themeName == "sepia" ? "logo-dolphin.png" : "logo-dolphin-white.png"} width={50} alt="Logo do Dolphin"/>
+                    {/* <img src="logo-dolphin.png" width={50} alt="Logo do Dolphin"/> */}
+                </a>
                 <Typography variant="h6" component="h1" className={classes.titleBar}>
-                    Dolphin
+                    <a href="/" className={classes.dolphinLogoName}>Dolphin</a>
                 </Typography>
 
                 {  

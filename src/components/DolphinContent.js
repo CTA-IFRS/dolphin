@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     listen: {
         borderRadius: 8,
         backgroundColor: theme.palette.listenMessages.main,
-        margin: "1em 0em"
+        margin: "1em 0em",
     }
 }));
 
