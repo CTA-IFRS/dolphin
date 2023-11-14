@@ -77,12 +77,12 @@ function DolphinAppBar(props) {
                 <MenuIcon />
                 </IconButton>
 
-                <a href="/" className={classes.dolphinLogoName}>
+                <a href="/dolphin" className={classes.dolphinLogoName}>
                 <img src={props.themeUpdater.themeName == "sepia" ? "logo-dolphin.png" : "logo-dolphin-white.png"} width={50} alt="Logo do Dolphin"/>
                     {/* <img src="logo-dolphin.png" width={50} alt="Logo do Dolphin"/> */}
                 </a>
                 <Typography variant="h6" component="h1" className={classes.titleBar}>
-                    <a href="/" className={classes.dolphinLogoName}>Dolphin</a>
+                    <a href="/dolphin" className={classes.dolphinLogoName}>Dolphin</a>
                 </Typography>
 
                 {  
