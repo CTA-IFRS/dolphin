@@ -7,18 +7,22 @@ export function getTheme(name) {
             palette: {
                 type: "light",
 
+                primary: {
+                    main: "#006064"
+                },
+
                 text: {
                     primary: "#000000",
                     scondary: "#000000"
                 },
 
                 speakMessages: {
-                    main: "#729be7",
+                    main: "#00ABBD",
                     contrastText: "#000000"
                 },
         
                 listenMessages: {
-                    main: "#daaa71",
+                    main: "#00A4EB",
                     contrastText: "#FFFFFF"
                 },
 
@@ -61,12 +65,12 @@ export function getTheme(name) {
                 // },
         
                 speakMessages: {
-                    main: "#09214e",
+                    main: "#025A64",
                     contrastText: "#FFFFFF"
                 },
         
                 listenMessages: {
-                    main: "#5c3f19",
+                    main: "#005D85",
                     contrastText: "#FFFFFF"
                 },
 
@@ -121,12 +125,12 @@ export function getTheme(name) {
                 // },
         
                 speakMessages: {
-                    main: "#729be7",
+                    main: "#98DAE1",
                     contrastText: "#FFFFFF"
                 },
         
                 listenMessages: {
-                    main: "#daaa71",
+                    main: "#52A7CB",
                     contrastText: "#FFFFFF"
                 },
 
