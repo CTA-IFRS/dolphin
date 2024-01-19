@@ -6,9 +6,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import DolphinCommandBar from "./DolphinCommandBar";
 import Talker from "./../talker/Talker";
 import Message from "./../types/Message";
+import { red } from "@material-ui/core/colors";
 
 const DATA = [
-    Message("Bem vindo ao Dolphin!", "speak")
+    Message("Bem vindo ao Dolphin!", "intro")
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -42,16 +43,35 @@ const useStyles = makeStyles((theme) => ({
     },
 
     speak: {
+        margin: "0.5em 0em",
+        justifyContent: "right"
+    },
+
+    speakInner: {
         borderRadius: 8,
         backgroundColor: theme.palette.speakMessages.main,
-        margin: "1em 0em"
+        padding: "0.5em 1em"
     },
 
     listen: {
+        margin: "0.5em 0em",
+        justifyContent: "left"
+    },
+
+    listenInner: {
         borderRadius: 8,
         backgroundColor: theme.palette.listenMessages.main,
-        margin: "1em 0em",
+        padding: "0.5em 1em"
+    },
+
+    intro: {
+        borderRadius: 8,
+        backgroundColor: theme.palette.speakMessages.main,
+        //padding: "1em 1em"
+        margin: "0.5em 0em",
+        justifyContent: "center"
     }
+
 }));
 
 export default function DolhpinContent(props) {
@@ -81,8 +101,9 @@ export default function DolhpinContent(props) {
                 className={classes[m.type]} 
                 key={id} 
                 id={"msg-" + id}>            
-
-                    {m.text}
+                    <span className={classes[m.type + "Inner"]}>
+                        {m.text}
+                    </span>
             </ListItem>
         ));
     }
