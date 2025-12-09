@@ -1,45 +1,33 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-import {Box, List, ListItem, Paper } from "@material-ui/core";
+import {Box, List, ListItem, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import DolphinCommandBar from "./DolphinCommandBar";
 import Talker from "./../talker/Talker";
 import Message from "./../types/Message";
-import { red } from "@material-ui/core/colors";
+import IconButton from '@material-ui/core/IconButton';
+import Pause from "@material-ui/icons/Pause";
+import VolumeUpOutlinedIcon from '@material-ui/icons/VolumeUpOutlined';
 
-const DATA = [
-    Message("Bem vindo ao Dolphin!", "intro")
-];
+const DATA = [];
 
 const useStyles = makeStyles((theme) => ({
     messagesBox:{
-        position: "fixed",
-        left: 0, 
-        right: 0,
-        top: 0, 
-        bottom: 0,
-        overflow: "auto",
-        
         backgroundColor: theme.palette.background.paper
     },
 
     messagesList:{
-        marginLeft: "1.5em",
-        marginRight: "1.5em",
-        marginTop: "3.5em",
-        marginBottom: "3.5em"
+        backgroundColor: theme.palette.grey[100],
+        marginBottom: 14,
+        borderRadius: 8,
+        padding: 24,
+        paddingRight: 48,
+        overflowY: "scroll",
+        height: "calc(100vh - 300px)"
     },
 
     commandBar: {
-        position: "fixed", 
-        bottom: "0px", 
-        left: "0px", 
-        right: "0px", 
-        borderTop: "1px solid black", 
-        zIndex: 1000,
-        padding: "0.5em 0.5em",
-        backgroundColor: theme.palette.background.default
     },
 
     speak: {
@@ -49,8 +37,14 @@ const useStyles = makeStyles((theme) => ({
 
     speakInner: {
         borderRadius: 8,
+        borderTopRightRadius: 0,
         backgroundColor: theme.palette.speakMessages.main,
-        padding: "0.5em 1em"
+        padding: "16px 24px",
+        paddingRight: 76,
+        fontFamily: "Nunito",
+        fontSize: 16,
+        lineHeight: "28px",
+        maxWidth: 900
     },
 
     listen: {
@@ -60,17 +54,33 @@ const useStyles = makeStyles((theme) => ({
 
     listenInner: {
         borderRadius: 8,
+        borderTopLeftRadius: 0,
         backgroundColor: theme.palette.listenMessages.main,
-        padding: "0.5em 1em"
+        padding: "16px 24px",
+        paddingRight: 76,
+        fontFamily: "Nunito",
+        fontSize: 16,
+        lineHeight: "28px",
+        maxWidth: 900
     },
 
-    intro: {
-        borderRadius: 8,
-        backgroundColor: theme.palette.speakMessages.main,
-        //padding: "1em 1em"
-        margin: "0.5em 0em",
-        justifyContent: "center"
-    }
+    container: {
+        backgroundColor: theme.palette.white.main,
+        padding: 24,
+        boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.1)",
+        borderRadius: 12,
+        marginTop: 120
+    },
+
+    playBtn: {
+        backgroundColor: theme.palette.white.main,
+        marginLeft: -58,
+        padding: 8,
+        color: theme.palette.grey[900],
+        "&:hover": {
+            backgroundColor: theme.palette.grey[100],
+        },
+    },
 
 }));
 
@@ -104,6 +114,20 @@ export default function DolhpinContent(props) {
                     <span className={classes[m.type + "Inner"]}>
                         {m.text}
                     </span>
+                <IconButton 
+                    className={classes.playBtn}
+                    size="medium"
+                    aria-label={playingId === id ? "Pausar áudio" : "Reproduzir áudio"} 
+                    onClick={() => {
+                        if (playingId === id) {
+                            handlePause();
+                        } else {
+                            handlePlay(id, m.text);
+                        }
+                    }}
+                >
+                    {playingId === id ? <Pause /> : <VolumeUpOutlinedIcon />}
+                </IconButton>
             </ListItem>
         ));
     }
@@ -116,20 +140,49 @@ export default function DolhpinContent(props) {
 
     useEffect(() => {
         const el = document.getElementById("msg-" + (data.length - 1));
-        el.scrollIntoView();
+        if (el) {
+            el.scrollIntoView();
+        }
     });
+    
+    const currentUtteranceRef = useRef(null);
+    const [playingId, setPlayingId] = useState(null);
+
+    function handlePlay(id, msg) {
+        handlePause();
+        
+        const utterance = new SpeechSynthesisUtterance(msg);
+        utterance.onend = () => {
+            setPlayingId(null);
+            currentUtteranceRef.current = null;
+        };
+
+        currentUtteranceRef.current = utterance;
+        setPlayingId(id);
+        window.speechSynthesis.speak(utterance);
+    }
+
+    function handlePause() {
+        if (currentUtteranceRef.current) {
+            window.speechSynthesis.cancel();
+            currentUtteranceRef.current = null;
+            setPlayingId(null);
+        }
+    }
 
     return (
         <>
-            <Box className={classes.messagesBox}>
-                <List className={classes.messagesList}>
-                    { toGridMessages() }
-                </List>  
-            </Box>
+            <Container maxWidth="lg" className={classes.container}>
+                <Box className={classes.messagesBox}>
+                    <List className={classes.messagesList}>
+                        { toGridMessages() }
+                    </List>  
+                </Box>
 
-            <Paper elevation={0} square={true} className={classes.commandBar}>
-                <DolphinCommandBar onAction={addSpeakMessage} />
-            </Paper>
+                <Box className={classes.commandBar}>
+                    <DolphinCommandBar onAction={addSpeakMessage} talkerMonitor={talkerMonitor}/>
+                </Box>
+            </Container>
         </>
     );
 

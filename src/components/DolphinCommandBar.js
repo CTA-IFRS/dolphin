@@ -1,24 +1,87 @@
 import { useRef } from "react";
 
-import { Grid, TextField, Button } from "@material-ui/core"
+import { TextField, Button, Box } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles";
 import SendIcon from '@material-ui/icons/Send';
+import React, { useEffect } from 'react';
+import MicIcon from '@material-ui/icons/Mic';
+import MicOffIcon from '@material-ui/icons/MicOff';
 
 const useStyles = makeStyles((theme) => ({
-    pad: {
-        padding: "0em 1em"
-    },
 
     root: {
-        "& .Mui-focused": {
-            color: theme.palette.text.primary,
-        }, 
+        "& .MuiOutlinedInput-root": {
+            height: 48,
+            borderRadius: 9999,
+            backgroundColor: theme.palette.grey[100],
+            color: theme.palette.grey[800],
+            paddingRight: 80,
+
+            "& fieldset": {
+                borderColor: theme.palette.grey[500],
+            },
+            "&:hover fieldset": {
+                borderColor: theme.palette.grey[500],
+            },
+            "&.Mui-focused fieldset": {
+                borderColor: theme.palette.grey[500],
+            },
+        },
+
+        "& .MuiInputLabel-outlined.MuiInputLabel-marginDense": {
+            transform: "translate(16px, 16px) scale(1)",
+        },
+
+        "& .MuiInputLabel-outlined.MuiInputLabel-marginDense.MuiInputLabel-shrink": {
+            transform: "translate(14px, -6px) scale(0.75)", 
+        },
+        
+        "& .MuiInputBase-input::placeholder": {
+            color: theme.palette.grey[600],
+            opacity: 1,
+        },
 
         "& .MuiInputLabel-root": {
-            color: theme.palette.text.primary
+            color: theme.palette.text.primary,
+        },
+        "& .Mui-focused .MuiInputLabel-root": {
+            color: theme.palette.text.primary,
         }
-        
-    }
+    },
+
+    active: {
+        color: theme.palette.primary[500],
+    },
+
+    notActive: {
+        color: theme.palette.primary[500],
+    },
+
+    writeButton: {
+        width: 204,
+        height: 48,
+        marginLeft: -80,
+        borderRadius: 9999,
+        paddingLeft: 24,
+        paddingRight: 24,
+    },
+
+    writeButtonText: {
+        marginLeft: "auto",
+        marginRight: "auto",
+    },
+
+    speakButton: {
+        width: 178,
+        height: 48,
+        borderRadius: 9999,
+        paddingLeft: 24,
+        paddingRight: 24,
+        marginLeft: 12,
+        border: "1.5px solid",
+        borderColor: theme.palette.primary[400],
+    },
+
 }));
 
 export default function DolphinCommandBar(props) {
@@ -36,24 +99,58 @@ export default function DolphinCommandBar(props) {
         ev.preventDefault();
         onAction(ev);
     }
+    
+    const talkerMonitor = props.talkerMonitor;
+
+    function handleTalkerListen() {
+        talkerMonitor.setTalkerListen(!talkerMonitor.isListenEnabled);
+    }
+
+    talkerMonitor.talker.setContinuityEvent(() => {
+        return talkerMonitor.isListenEnabled;
+    });
+
+    useEffect(() => {
+        if (talkerMonitor.isListenEnabled) {
+            if (!talkerMonitor.talker.isRunning()) talkerMonitor.talker.start()
+        } else {
+            if (talkerMonitor.talker.isRunning()) talkerMonitor.talker.stop();
+        }
+    });
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <Grid container>
-                    <Grid item xs={8} className={classes.pad}>
-                        <TextField id="input-message" label="Digite sua mensagem"
+                <Box display="grid" gridTemplateColumns={talkerMonitor.talker.hasSupport() ? "1fr 193px" : "1fr"}>
+                    <Box display="flex" flexDirection="row">
+                        <TextField id="input-message" label="Digite sua fala"
                             fullWidth inputRef={inputMsgRef}
-                            className={classes.root}/>
-                    </Grid>
-                    <Grid item xs={4} className={classes.pad}>
-                        <Button fullWidth variant="text" size="large"
-                            startIcon={<SendIcon />}
-                            onClick={onAction}>
-                            Falar
+                            className={classes.root}
+                            variant="outlined"
+                            size="small"
+                        />
+                        <Button fullWidth variant="contained" size="large" disableElevation color="primary"
+                            onClick={onAction}
+                            endIcon={<SendIcon />}
+                            className={classes.writeButton}
+                        >
+                            <span className={classes.writeButtonText}>Enviar</span>
                         </Button>
-                    </Grid>
-                </Grid>
+                    </Box>
+                    <Box>
+                        {  
+                            (talkerMonitor.talker.hasSupport()) &&
+                            (<Button onClick={handleTalkerListen}
+                                    aria-pressed={talkerMonitor.isListenEnabled}
+                                    variant="outlined" color="primary" size="large"
+                                    className={classes.speakButton}
+                                    endIcon={talkerMonitor.isListenEnabled ? <MicIcon /> : <MicOffIcon />}
+                                >
+                                enviar fala
+                            </Button>)
+                        }
+                    </Box>
+                </Box>
             </form>
         </div>
     );

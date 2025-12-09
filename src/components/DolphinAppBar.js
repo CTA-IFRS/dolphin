@@ -5,17 +5,34 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
 import MenuIcon from "@material-ui/icons/Menu";
-import MicIcon from '@material-ui/icons/Mic';
-import MicOffIcon from '@material-ui/icons/MicOff';
 import VolumeUp from '@material-ui/icons/VolumeUp';
 import VolumeOff from '@material-ui/icons/VolumeOff';
+import Settings from '@material-ui/icons/Settings';
 
 import DolphinDrawer from "./DolphinDrawer";
 
-
 const useStyles = makeStyles((theme) => ({
+
+    appBarCustom: {
+        backgroundColor: theme.palette.white.main,
+        color: theme.palette.grey[900],
+        boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.1)",
+        height: 96,
+        justifyContent: "center"
+    },
+  
     menuButton: {
-        marginRight: theme.spacing(2)
+        marginRight: theme.spacing(2),
+        border: "1px solid",
+        borderColor: theme.palette.grey[400],
+        borderRadius: 4,
+        width: 60,
+        height: 60,
+        color: theme.palette.grey[900],
+    },
+
+    menuIcon: {
+        fontSize: 29
     },
 
     active: {
@@ -32,13 +49,18 @@ const useStyles = makeStyles((theme) => ({
 
     dolphinLogoName: {
         textDecoration: 'none',
-        color: theme.palette.dolphinLogoColor.color
+        color: theme.palette.grey[900],
+        fontFamily: "Atkinson Hyperlegible, sans-serif",
+        fontWeight: 700,
+        fontSize: 24,
+        marginLeft: 8
     }
 }));
 
 function DolphinAppBar(props) {
     const classes = useStyles();
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [configDrawerOpen, setConfigDrawerOpen] = useState(false);
     
     const talkerMonitor = props.talkerMonitor;
 
@@ -46,8 +68,8 @@ function DolphinAppBar(props) {
         setDrawerOpen(!drawerOpen);
     }
 
-    function handleTalkerListen() {
-        talkerMonitor.setTalkerListen(!talkerMonitor.isListenEnabled);
+    function handleConfigOpenDrawer() {
+        setConfigDrawerOpen(!configDrawerOpen);
     }
 
     function handleTalkerSpeak() {
@@ -67,38 +89,16 @@ function DolphinAppBar(props) {
     });
 
     return (
-        <AppBar position="fixed">
+        <AppBar position="fixed" className={classes.appBarCustom}>
             <Toolbar>
-                <IconButton edge="start" className={classes.menuButton}
-                            color="inherit" aria-label="menu"
-                            onClick={handleOpenDrawer} 
-                            aria-haspopup="true"
-                            aria-expanded={drawerOpen}>
-                <MenuIcon />
-                </IconButton>
 
                 <a href="/dolphin" className={classes.dolphinLogoName}>
-                <img src={props.themeUpdater.themeName == "sepia" ? "logo-dolphin.png" : "logo-dolphin-white.png"} width={50} alt="Logo do Dolphin"/>
+                <img src={props.themeUpdater.themeName === "highContrast" ? "logo-dolphin-white.png" : "logo-dolphin.png"} width={85} alt="Logo do Dolphin"/>
                     {/* <img src="logo-dolphin.png" width={50} alt="Logo do Dolphin"/> */}
                 </a>
                 <Typography variant="h6" component="h1" className={classes.titleBar}>
                     <a href="/dolphin" className={classes.dolphinLogoName}>Dolphin</a>
                 </Typography>
-
-                {  
-                    (talkerMonitor.talker.hasSupport()) &&
-                    (<IconButton onClick={handleTalkerListen}
-                            aria-pressed={talkerMonitor.isListenEnabled}
-                            aria-label="Conversão fala para texto">
-                        {
-                            (talkerMonitor.isListenEnabled) ? 
-                                <MicIcon className={classes.active} />
-                            :
-                                <MicOffIcon className={classes.notActive} />
-                        }
-                    </IconButton>)
-                 
-                }
 
                 <IconButton onClick={handleTalkerSpeak} 
                             aria-pressed={talkerMonitor.isSpeakEnabled}
@@ -111,10 +111,34 @@ function DolphinAppBar(props) {
                     }   
                 </IconButton>
 
+                <IconButton edge="start" className={classes.menuButton}
+                            color="inherit" aria-label="menu"
+                            onClick={handleConfigOpenDrawer} 
+                            aria-haspopup="true"
+                            aria-expanded={configDrawerOpen}>
+                    <Settings className={classes.menuIcon}/>
+                </IconButton>
+
+                <IconButton edge="start" className={classes.menuButton}
+                            color="inherit" aria-label="menu"
+                            onClick={handleOpenDrawer} 
+                            aria-haspopup="true"
+                            aria-expanded={drawerOpen}>
+                    <MenuIcon className={classes.menuIcon}/>
+                </IconButton>
+
             </Toolbar>
+            
+            <DolphinDrawer open={configDrawerOpen} onClose={handleConfigOpenDrawer} 
+                themeUpdater={props.themeUpdater}
+                anchor="right"
+            />
+            
             <DolphinDrawer open={drawerOpen} onClose={handleOpenDrawer} 
                 themeUpdater={props.themeUpdater}
+                anchor="right"
             />
+
         </AppBar>
     );
 }

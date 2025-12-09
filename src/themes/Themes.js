@@ -1,47 +1,76 @@
 
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
+
+const baseTheme = {
+  typography: {
+    fontFamily: "Nunito",
+  }
+};
 
 export function getTheme(name) {
     if (name === "commom") {
-        return createMuiTheme({
+        return createTheme({
+            ...baseTheme,
             palette: {
                 type: "light",
 
                 primary: {
-                    main: "#006064"
+                    100: "#E6F3F6",
+                    200: "#96CCD2",
+                    300: "#00838F",
+                    400: "#006064",
+                    500: "#035155",
+                    600: "#023032"
                 },
 
-                text: {
-                    primary: "#000000",
-                    scondary: "#000000"
+                grey: {
+                    100: "#F8F9FA",
+                    200: "#E9ECEF",
+                    300: "#DEE2E6",
+                    400: "#CED4DA",
+                    500: "#ADB5BD",
+                    600: "#6C757D",
+                    700: "#495057",
+                    800: "#343A40",
+                    900: "#212529"
                 },
 
-                speakMessages: {
-                    main: "#00ABBD",
-                    contrastText: "#000000"
-                },
-        
-                listenMessages: {
-                    main: "#00A4EB",
-                    contrastText: "#FFFFFF"
+                black: {
+                    main: "#000000"
                 },
 
-                talkerActive: {
-                    main: "#00FF00"
-                },
-
-                talkerNotActive: {
+                white: {
                     main: "#FFFFFF"
                 },
 
-                dolphinLogoColor: {
-                    color: 'white'
-                }
+                text: {
+                    primary: "#212529",
+                    scondary: "#6C757D"
+                },
+
+                speakMessages: {
+                    main: "#96CCD2",
+                    contrastText: "#212529"
+                },
+        
+                listenMessages: {
+                    main: "#DEE2E6",
+                    contrastText: "#212529"
+                },
+
+                talkerActive: {
+                    main: "#212529"
+                },
+
+                talkerNotActive: {
+                    main: "#212529"
+                },
             }
         });
 
     } else if (name === "highContrast"){
-        return createMuiTheme({
+        return createTheme({
+            ...baseTheme,
             palette: {
                 type: "dark",
         
@@ -82,18 +111,14 @@ export function getTheme(name) {
                     main: "#FFFFFF"
                 },
 
-                dolphinLogoColor: {
-                    color: 'white'
-                },
-        
-
                 contrastThreshold: 7,
                 tonalOffset: 0
             }
         });
 
     } else if (name === "sepia") {
-        return createMuiTheme({
+        return createTheme({
+            ...baseTheme,
             palette: {
                 type: "light",
         
@@ -140,10 +165,6 @@ export function getTheme(name) {
 
                 talkerNotActive: {
                     main: "#000000"
-                },
-
-                dolphinLogoColor: {
-                    color: 'black'
                 },
         
                 contrastThreshold: 7,

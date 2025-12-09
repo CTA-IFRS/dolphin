@@ -24,7 +24,7 @@ function App() {
             <Paper elevation={0} square={true}>
                 <DolphinAppBar talkerMonitor={talkerMonitor} 
                                 themeUpdater={themeUpdater} />
-                <Box style={{marginTop: "3.5em"}}>
+                <Box style={{marginTop: "3.5em", backgroundColor: "#F8F9FA"}}>
                     <DolphinContent talkerMonitor={talkerMonitor} />
                 </Box>
             </Paper>
