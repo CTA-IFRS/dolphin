@@ -1,15 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
-
 import { makeStyles } from "@material-ui/core/styles";
-
 import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
 import MenuIcon from "@material-ui/icons/Menu";
 import VolumeUp from '@material-ui/icons/VolumeUp';
 import VolumeOff from '@material-ui/icons/VolumeOff';
 import Settings from '@material-ui/icons/Settings';
-
 import DolphinDrawer from "./DolphinDrawer";
+import DolphinConfigDrawer from "./DolphinConfigDrawer";
 
 const useStyles = makeStyles((theme) => ({
 
@@ -129,13 +127,12 @@ function DolphinAppBar(props) {
 
             </Toolbar>
             
-            <DolphinDrawer open={configDrawerOpen} onClose={handleConfigOpenDrawer} 
+            <DolphinConfigDrawer open={configDrawerOpen} onClose={handleConfigOpenDrawer} 
                 themeUpdater={props.themeUpdater}
                 anchor="right"
             />
             
             <DolphinDrawer open={drawerOpen} onClose={handleOpenDrawer} 
-                themeUpdater={props.themeUpdater}
                 anchor="right"
             />
 

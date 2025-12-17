@@ -1,25 +1,18 @@
 import React, {useState} from "react";
-import { Drawer, Button, ButtonGroup, Typography, Link, Divider } from "@material-ui/core";
+import { Drawer, Link, } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import DolphinAboutDialog from "./DolphinAboutDialog";
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 const useStyles = makeStyles((theme) => ({
 
     mainGrid: {
         display: "flex",
         flexDirection: "column",
-        height: "100%"
-    },
-
-    contrastGrid: {
+        height: "100%",
         textAlign: "center",
-        flexGrow: 1,
-        padding: theme.spacing(3)
-    },
-
-    aboutGrid: {
-        textAlign: "center",
-        padding: theme.spacing(3)
+        width: 212
     },
 
     srOnly: {
@@ -30,78 +23,74 @@ const useStyles = makeStyles((theme) => ({
         left: "-1000px",
     },
 
-    mb1: {
-        marginBottom: "1em"
+    menu: {
+        display: "flex",
+        flexDirection: "column",
+        gap: 14,
     },
 
-    dividerMargin: {
-        marginBottom: "1.5em",
-        marginTop: "1.5em"
+    manualButton: {
+        color: theme.palette.grey[800],
+        fontFamily: "Atkinson Hyperlegible, sans-serif",
+        fontWeight: 400,
+        fontSize: 16,
+        borderLeft: "2px solid transparent",
+        padding: "10px",
+        paddingLeft: "14px",
+        textDecoration: "none",
+        textAlign: "left",
+
+        "&:hover, &:focus, &:focus-visible": {
+            backgroundColor: theme.palette.primary[100],
+            borderColor: theme.palette.primary[500],
+            outline: "none",
+        }
+    },
+
+    flex_row: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        paddingLeft: 16,
+        paddingTop: 12,
+        paddingBottom: 12
+    },
+
+    d_title: {
+        fontFamily: "Atkinson Hyperlegible, sans-serif",
+        fontWeight: 700,
+        fontSize: 20,
+        color: theme.palette.grey[800],
+        margin: 0
+    },
+
+    logo_cta: {
+        margin: "auto",
+        marginBottom: 24
     }
 }));
 
-export default function DolphinDrawer(props) {
+export default function DolphinDrawer({onClose, ...props }) {
     const classes = useStyles();
-    const [logoSrc, changeLogoSrc] = useState("logo-cta.png");
-
-    const themeUpdater = props.themeUpdater;
-
-    function changeToDefaultTheme() {
-        themeUpdater.setTheme("commom");
-        changeLogoSrc("logo-cta.png");
-        props.onClose();
-    }
-
-    function changeToHighContrastTheme() {
-        themeUpdater.setTheme("highContrast");
-        changeLogoSrc("logo-cta-contraste.png");
-        props.onClose();
-    }
-
-    function changeToSepiaTheme() {
-        themeUpdater.setTheme("sepia");
-        changeLogoSrc("logo-cta.png");
-        props.onClose();
-    }
-
-    const filteredProps = Object.keys(props).reduce((obj, key) => {
-        if (key !== "themeUpdater") {
-            obj[key] = props[key];
-        }
-
-        return obj;
-    }, {});
 
     return (
-        <Drawer {...filteredProps}>
+        <Drawer {...props} onClose={onClose}>
             <div className={classes.mainGrid}>
-                <div className={classes.contrastGrid}>
-                    <ButtonGroup orientation="vertical"
-                        aria-label="Ajuste de contraste">
-                        <Button onClick={changeToDefaultTheme}>
-                            Normal
-                        </Button>
-                        <Button onClick={changeToHighContrastTheme}>
-                            Alto contraste
-                        </Button>
-                        <Button onClick={changeToSepiaTheme}>
-                            Sépia
-                        </Button>
-                    </ButtonGroup>
+                <div className={classes.flex_row}>
+                    <h5 className={classes.d_title}>
+                        Menu
+                    </h5>
+                    <IconButton onClick={onClose}>
+                        <CloseIcon />
+                    </IconButton>
                 </div>
-
-                <div className={classes.aboutGrid}>
-                    <div className={classes.mb1}>
-                        <DolphinAboutDialog/>
-                    </div>
-                    <Divider className={classes.mb1}/>
-                    <Typography >
-                        <Link href="https://cta.ifrs.edu.br/"
-                            color="textPrimary"> 
-                            <img src={logoSrc} width={160} alt="Logo do Centro Tecnológico de Acessibilidade"/>
-                        </Link>
-                    </Typography>
+                <div className={classes.menu}>
+                    <DolphinAboutDialog/>
+                    <a className={classes.manualButton} href="https://cta-ifrs.github.io/dolphin/manual/index.html">Manual (link externo)</a>
                 </div>
+                <Link href="https://cta.ifrs.edu.br/" className={classes.logo_cta}> 
+                    <img src="logo-cta.png" width={160} alt="Logo do Centro Tecnológico de Acessibilidade"/>
+                </Link>
             </div>
         </Drawer>
     );
