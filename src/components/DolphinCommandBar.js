@@ -13,8 +13,8 @@ const useStyles = makeStyles((theme) => ({
         "& .MuiOutlinedInput-root": {
             height: 48,
             borderRadius: 9999,
-            backgroundColor: theme.palette.grey[100],
-            color: theme.palette.grey[800],
+            backgroundColor: theme.palette.inputText.main,
+            color: theme.palette.inputText.contrastText,
             paddingRight: 80,
 
             "& fieldset": {
@@ -64,6 +64,16 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: 9999,
         paddingLeft: 24,
         paddingRight: 24,
+        border: "1px solid",
+        backgroundColor: theme.palette.primaryButton.main,
+        color: theme.palette.primaryButton.text,
+        borderColor: theme.palette.primaryButton.border,
+
+        "&:hover, &:focus, &:focus-visible": {
+            backgroundColor: theme.palette.primaryButton.hover,
+            color: theme.palette.primaryButton.textHover,
+            borderColor: theme.palette.primaryButton.borderHover,
+        }
     },
 
     writeButtonText: {
@@ -79,7 +89,13 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: 24,
         marginLeft: 12,
         border: "1.5px solid",
-        borderColor: theme.palette.primary[400],
+        borderColor: theme.palette.outlineButton.main,
+        color: theme.palette.outlineButton.main,
+
+        "&:hover, &:focus, &:focus-visible": {
+            backgroundColor: theme.palette.outlineButton.main,
+            color: theme.palette.outlineButton.textHover,
+        }
     },
 
 }));
@@ -129,7 +145,7 @@ export default function DolphinCommandBar(props) {
                             variant="outlined"
                             size="small"
                         />
-                        <Button fullWidth variant="contained" size="large" disableElevation color="primary"
+                        <Button fullWidth variant="contained" size="large" disableElevation
                             onClick={onAction}
                             endIcon={<SendIcon />}
                             className={classes.writeButton}
@@ -142,7 +158,7 @@ export default function DolphinCommandBar(props) {
                             (talkerMonitor.talker.hasSupport()) &&
                             (<Button onClick={handleTalkerListen}
                                     aria-pressed={talkerMonitor.isListenEnabled}
-                                    variant="outlined" color="primary" size="large"
+                                    variant="outlined" size="large"
                                     className={classes.speakButton}
                                     endIcon={talkerMonitor.isListenEnabled ? <MicIcon /> : <MicOffIcon />}
                                 >

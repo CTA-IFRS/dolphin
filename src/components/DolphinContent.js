@@ -18,7 +18,9 @@ const useStyles = makeStyles((theme) => ({
     },
 
     messagesList:{
-        backgroundColor: theme.palette.grey[100],
+        backgroundColor: theme.palette.messagesList.main,
+        border: "1px solid",
+        borderColor: theme.palette.messagesList.border,
         marginBottom: 14,
         borderRadius: 8,
         padding: 24,
@@ -65,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     container: {
-        backgroundColor: theme.palette.white.main,
+        backgroundColor: theme.palette.defaultColor.main,
         padding: 24,
         boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.1)",
         borderRadius: 12,
@@ -73,12 +75,12 @@ const useStyles = makeStyles((theme) => ({
     },
 
     playBtn: {
-        backgroundColor: theme.palette.white.main,
+        backgroundColor: theme.palette.defaultColor.main,
         marginLeft: -58,
         padding: 8,
-        color: theme.palette.grey[900],
+        color: theme.palette.playBtn.contrastText,
         "&:hover": {
-            backgroundColor: theme.palette.grey[100],
+            backgroundColor: theme.palette.defaultColor.main,
         },
     },
 

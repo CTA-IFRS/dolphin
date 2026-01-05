@@ -21,10 +21,10 @@ function App() {
 
     return (
         <MuiThemeProvider theme={getTheme(themeName)}>
-            <Paper elevation={0} square={true}>
+            <Paper elevation={0} square={true} style={{backgroundColor: "transparent"}}>
                 <DolphinAppBar talkerMonitor={talkerMonitor} 
                                 themeUpdater={themeUpdater} />
-                <Box style={{marginTop: "3.5em", backgroundColor: "#F8F9FA"}}>
+                <Box style={{marginTop: "3.5em"}}>
                     <DolphinContent talkerMonitor={talkerMonitor} />
                 </Box>
             </Paper>

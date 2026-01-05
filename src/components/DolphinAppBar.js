@@ -12,7 +12,7 @@ import DolphinConfigDrawer from "./DolphinConfigDrawer";
 const useStyles = makeStyles((theme) => ({
 
     appBarCustom: {
-        backgroundColor: theme.palette.white.main,
+        backgroundColor: theme.palette.defaultColor.main,
         color: theme.palette.grey[900],
         boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.1)",
         height: 96,
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: 4,
         width: 60,
         height: 60,
-        color: theme.palette.grey[900],
+        color: theme.palette.text.primary,
     },
 
     menuIcon: {
@@ -34,11 +34,11 @@ const useStyles = makeStyles((theme) => ({
     },
 
     active: {
-        color: theme.palette.talkerActive.main
+        color: theme.palette.text.primary
     },
 
     notActive: {
-        color: theme.palette.talkerNotActive.main
+        color: theme.palette.text.primary
     },
 
     titleBar: {
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 
     dolphinLogoName: {
         textDecoration: 'none',
-        color: theme.palette.grey[900],
+        color: theme.palette.text.primary,
         fontFamily: "Atkinson Hyperlegible, sans-serif",
         fontWeight: 700,
         fontSize: 24,
@@ -98,7 +98,7 @@ function DolphinAppBar(props) {
                     <a href="/dolphin" className={classes.dolphinLogoName}>Dolphin</a>
                 </Typography>
 
-                <IconButton onClick={handleTalkerSpeak} 
+                {/*<IconButton onClick={handleTalkerSpeak} 
                             aria-pressed={talkerMonitor.isSpeakEnabled}
                             aria-label="Conversão texto para fala">
                     {           
@@ -107,7 +107,7 @@ function DolphinAppBar(props) {
                         :
                             <VolumeOff className={classes.notActive} />
                     }   
-                </IconButton>
+                </IconButton>*/}
 
                 <IconButton edge="start" className={classes.menuButton}
                             color="inherit" aria-label="menu"

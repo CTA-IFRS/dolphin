@@ -8,6 +8,7 @@ import CloseIcon from '@material-ui/icons/Close';
 const useStyles = makeStyles((theme) => ({
 
     mainGrid: {
+        backgroundColor: theme.palette.drawer.main,
         display: "flex",
         flexDirection: "column",
         height: "100%",
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     manualButton: {
-        color: theme.palette.grey[800],
+        color: theme.palette.text.secondary,
         fontFamily: "Atkinson Hyperlegible, sans-serif",
         fontWeight: 400,
         fontSize: 16,
@@ -41,8 +42,8 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "left",
 
         "&:hover, &:focus, &:focus-visible": {
-            backgroundColor: theme.palette.primary[100],
-            borderColor: theme.palette.primary[500],
+            backgroundColor: theme.palette.menuButton.main,
+            borderColor: theme.palette.menuButton.border,
             outline: "none",
         }
     },
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Atkinson Hyperlegible, sans-serif",
         fontWeight: 700,
         fontSize: 20,
-        color: theme.palette.grey[800],
+        color: theme.palette.text.secondary,
         margin: 0
     },
 
@@ -89,7 +90,7 @@ export default function DolphinDrawer({onClose, ...props }) {
                     <a className={classes.manualButton} href="https://cta-ifrs.github.io/dolphin/manual/index.html">Manual (link externo)</a>
                 </div>
                 <Link href="https://cta.ifrs.edu.br/" className={classes.logo_cta}> 
-                    <img src="logo-cta.png" width={160} alt="Logo do Centro Tecnológico de Acessibilidade"/>
+                    <img src="logo-cta.png" width={160} style={{backgroundColor: "white", padding: "12px", borderRadius: "8px"}} alt="Logo do Centro Tecnológico de Acessibilidade"/>
                 </Link>
             </div>
         </Drawer>

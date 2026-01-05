@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     aboutButton: {
         textTransform: "none",
         backgroundColor: "transparent",
-        color: theme.palette.grey[800],
+        color: theme.palette.text.secondary,
         fontFamily: "Atkinson Hyperlegible, sans-serif",
         fontWeight: 400,
         fontSize: 16,
@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
         cursor: "pointer",
 
         "&:hover, &:focus, &:focus-visible": {
-            backgroundColor: theme.palette.primary[100],
-            borderColor: theme.palette.primary[500],
+            backgroundColor: theme.palette.menuButton.main,
+            borderColor: theme.palette.menuButton.border,
             outline: "none",
         }
     },
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         right: theme.spacing(1),
         top: theme.spacing(1),
-        color: theme.palette.grey[600],
+        color: theme.palette.text.secondary,
     },
     
     d_content: {
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 16,
         lineHeight: "28px",
         margin: 0,
-        color: theme.palette.grey[700],
+        color: theme.palette.text.primary,
 
         '& ul': {
             display: "flex",
@@ -84,6 +84,12 @@ const useStyles = makeStyles((theme) => ({
         gap: "24px",
         padding: "24px"
     },
+
+    d_body: {
+        "& .MuiPaper-root ": {
+            backgroundColor: theme.palette.drawer.main
+        }
+    }
 
 }));
 
@@ -133,10 +139,10 @@ function DolphinAboutDialog() {
             </DialogContent>
             <DialogActions className={classes.d_footer}>
                 <a href="https://cta.ifrs.edu.br">
-                    <img src="/logo-cta.png" height="55px" alt="Logo do CTA - Centro Tecnológico de Acessibilidade do IFRS"/>
+                    <img src="/logo-cta.png" height="55px" style={{backgroundColor: "white", padding: "12px", borderRadius: "8px"}} alt="Logo do CTA - Centro Tecnológico de Acessibilidade do IFRS"/>
                 </a>
                 <a href="https://ifrs.edu.br">
-                    <img src="/logo-ifrs.png" height="55px" alt="Logo do IFRS - Instituto Federal de Educação Ciência e Tecnologia do Rio Grande do Sul"/>
+                    <img src="/logo-ifrs.png" height="55px" style={{backgroundColor: "white", padding: "12px", borderRadius: "8px"}} alt="Logo do IFRS - Instituto Federal de Educação Ciência e Tecnologia do Rio Grande do Sul"/>
                 </a>
             </DialogActions>
         </Dialog>

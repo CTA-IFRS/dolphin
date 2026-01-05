@@ -45,7 +45,7 @@ export function getTheme(name) {
 
                 text: {
                     primary: "#212529",
-                    scondary: "#6C757D"
+                    secondary: "#343A40"
                 },
 
                 speakMessages: {
@@ -58,13 +58,46 @@ export function getTheme(name) {
                     contrastText: "#212529"
                 },
 
-                talkerActive: {
-                    main: "#212529"
+                defaultColor: {
+                    main: "#FFFFFF"
                 },
 
-                talkerNotActive: {
-                    main: "#212529"
+                primaryButton: {
+                    main: "#006064",
+                    hover: "#023032",
+                    text: "#FFFFFF",
+                    border: "#006064",
+                    textHover: "#FFFFFF",
+                    borderHover: "#023032",
                 },
+
+                outlineButton: {
+                    main: "#006064",
+                    textHover: "#FFFFFF",
+                },
+
+                messagesList: {
+                    main: "#F8F9FA",
+                    border: "#F8F9FA"
+                },
+
+                playBtn: {
+                    contrastText: "#212529"
+                },
+
+                inputText: {
+                    main: "#F8F9FA",
+                    contrastText: "#343A40"
+                },
+
+                menuButton: {
+                    main: "#E6F3F6",
+                    border: "#035155",
+                },
+
+                drawer: {
+                    main: "#FFFFFF"
+                }
             }
         });
 
@@ -86,7 +119,7 @@ export function getTheme(name) {
 
                 text: {
                     primary: "#FFFFFF",
-                    scondary: "#FFFFFF"
+                    secondary: "#FFFFFF"
                 },
 
                 // background: {
@@ -94,21 +127,54 @@ export function getTheme(name) {
                 // },
         
                 speakMessages: {
-                    main: "#025A64",
+                    main: "#212529",
                     contrastText: "#FFFFFF"
                 },
         
                 listenMessages: {
-                    main: "#005D85",
+                    main: "#212529",
                     contrastText: "#FFFFFF"
                 },
 
-                talkerActive: {
-                    main: "#00FF00"
+                defaultColor: {
+                    main: "#000000"
                 },
 
-                talkerNotActive: {
-                    main: "#FFFFFF"
+                primaryButton: {
+                    main: "#000000",
+                    hover: "#FFFFFF",
+                    text: "#FFFFFF",
+                    border: "#FFFFFF",
+                    textHover: "#000000",
+                    borderHover: "#000000",
+                },
+
+                outlineButton: {
+                    main: "#FFFFFF",
+                    textHover: "#000000",
+                },
+
+                messagesList: {
+                    main: "#000000",
+                    border: "#FFFFFF"
+                },
+
+                playBtn: {
+                    contrastText: "#FFFFFF"
+                },
+
+                inputText: {
+                    main: "#000000",
+                    contrastText: "#FFFFFF"
+                },
+
+                menuButton: {
+                    main: "#000000",
+                    border: "#FFFFFF",
+                },
+
+                drawer: {
+                    main: "#212529"
                 },
 
                 contrastThreshold: 7,
@@ -138,8 +204,8 @@ export function getTheme(name) {
                 },
 
                 text: {
-                    primary: "#000000",
-                    scondary: "#000000"
+                    primary: "#212529",
+                    secondary: "#343A40"
                 },
 
                 // action: {
@@ -150,21 +216,54 @@ export function getTheme(name) {
                 // },
         
                 speakMessages: {
-                    main: "#98DAE1",
-                    contrastText: "#FFFFFF"
+                    main: "#96CCD2",
+                    contrastText: "#212529"
                 },
         
                 listenMessages: {
-                    main: "#52A7CB",
-                    contrastText: "#FFFFFF"
+                    main: "#DEE2E6",
+                    contrastText: "#212529"
                 },
 
-                talkerActive: {
-                    main: "#00AA00"
+                defaultColor: {
+                    main: "#ffebcd"
+                },
+                
+                primaryButton: {
+                    main: "#495057",
+                    hover: "#343A40",
+                    text: "#FFFFFF",
+                    border: "#495057",
+                    textHover: "#FFFFFF",
+                    borderHover: "#343A40",
                 },
 
-                talkerNotActive: {
-                    main: "#000000"
+                outlineButton: {
+                    main: "#343A40",
+                    textHover: "#FFFFFF",
+                },
+
+                messagesList: {
+                    main: "#ffebcd",
+                    border: "#ADB5BD"
+                },
+
+                playBtn: {
+                    contrastText: "#212529"
+                },
+
+                inputText: {
+                    main: "#ffebcd",
+                    contrastText: "#343A40"
+                },
+
+                menuButton: {
+                    main: "#E6F3F6",
+                    border: "#035155",
+                },
+
+                drawer: {
+                    main: "#ffebcd"
                 },
         
                 contrastThreshold: 7,

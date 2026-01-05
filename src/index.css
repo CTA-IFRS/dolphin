@@ -11,6 +11,14 @@ body {
   background-color: #F8F9FA;
 }
 
+body.body-sepia {
+  background-color: #ffebcd;
+}
+
+body.body-highContrast {
+  background-color: #212529;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
