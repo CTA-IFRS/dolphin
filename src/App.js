@@ -13,6 +13,8 @@ import { getTheme } from "./themes/Themes";
 function App() {
     const talkerMonitor = useTalkerMonitor(false, true);
     const [themeName, setTheme] = useState("commom");
+    const [selectedVoice, setSelectedVoice] = useState(null);
+    const [speechRate, setSpeechRate] = useState(1);
 
     const themeUpdater = {
         themeName,
@@ -23,9 +25,13 @@ function App() {
         <MuiThemeProvider theme={getTheme(themeName)}>
             <Paper elevation={0} square={true} style={{backgroundColor: "transparent"}}>
                 <DolphinAppBar talkerMonitor={talkerMonitor} 
-                                themeUpdater={themeUpdater} />
+                                themeUpdater={themeUpdater} 
+                                selectedVoice={selectedVoice}
+                                setSelectedVoice={setSelectedVoice}
+                                speechRate={speechRate}
+                                setSpeechRate={setSpeechRate}/>
                 <Box style={{marginTop: "3.5em"}}>
-                    <DolphinContent talkerMonitor={talkerMonitor} />
+                    <DolphinContent talkerMonitor={talkerMonitor} selectedVoice={selectedVoice} speechRate={speechRate}/>
                 </Box>
             </Paper>
         </MuiThemeProvider>

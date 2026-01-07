@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.secondary,
         fontFamily: "Atkinson Hyperlegible, sans-serif",
         fontWeight: 400,
-        fontSize: 16,
+        fontSize: "1rem",
         borderLeft: "2px solid transparent",
         padding: "10px",
         paddingLeft: "14px",
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     d_title: {
         fontFamily: "Atkinson Hyperlegible, sans-serif",
         fontWeight: 700,
-        fontSize: 20,
+        fontSize: "1.25rem",
         color: theme.palette.text.secondary,
         margin: 0
     },

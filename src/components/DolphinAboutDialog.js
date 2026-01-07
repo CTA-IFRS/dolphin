@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.secondary,
         fontFamily: "Atkinson Hyperlegible, sans-serif",
         fontWeight: 400,
-        fontSize: 16,
+        fontSize: "1rem",
         textAlign: "left",
         justifyContent: "left",
         borderRadius: 0,
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     d_title: {
         fontFamily: "Atkinson Hyperlegible, sans-serif",
         fontWeight: 700,
-        fontSize: 24,
+        fontSize: "1.5rem",
         margin: 0
     },
 
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     d_text: {
         fontFamily: "Nunito",
         fontWeight: 400,
-        fontSize: 16,
+        fontSize: "1rem",
         lineHeight: "28px",
         margin: 0,
         color: theme.palette.text.primary,

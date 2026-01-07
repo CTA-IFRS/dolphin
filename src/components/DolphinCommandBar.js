@@ -68,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.primaryButton.main,
         color: theme.palette.primaryButton.text,
         borderColor: theme.palette.primaryButton.border,
+        fontWeight: 700,
 
         "&:hover, &:focus, &:focus-visible": {
             backgroundColor: theme.palette.primaryButton.hover,
@@ -91,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
         border: "1.5px solid",
         borderColor: theme.palette.outlineButton.main,
         color: theme.palette.outlineButton.main,
+        fontWeight: 700,
 
         "&:hover, &:focus, &:focus-visible": {
             backgroundColor: theme.palette.outlineButton.main,

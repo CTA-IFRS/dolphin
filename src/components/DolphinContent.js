@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
         padding: "16px 24px",
         paddingRight: 76,
         fontFamily: "Nunito",
-        fontSize: 16,
         lineHeight: "28px",
         maxWidth: 900
     },
@@ -61,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
         padding: "16px 24px",
         paddingRight: 76,
         fontFamily: "Nunito",
-        fontSize: 16,
         lineHeight: "28px",
         maxWidth: 900
     },
@@ -86,11 +84,15 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function DolhpinContent(props) {
+export default function DolhpinContent({
+    talkerMonitor,
+    selectedVoice,
+    speechRate
+}) {
     const classes = useStyles();
     const [data, setData] = useState(DATA);
 
-    const talkerMonitor = props.talkerMonitor;
+    //const talkerMonitor = props.talkerMonitor;
 
     function addMessage(msgObj) {
         setData([...data, msgObj]);
@@ -154,6 +156,14 @@ export default function DolhpinContent(props) {
         handlePause();
         
         const utterance = new SpeechSynthesisUtterance(msg);
+
+        if (selectedVoice) {
+            utterance.voice = selectedVoice;
+            utterance.lang = selectedVoice.lang;
+        }
+
+        utterance.rate = speechRate;
+
         utterance.onend = () => {
             setPlayingId(null);
             currentUtteranceRef.current = null;

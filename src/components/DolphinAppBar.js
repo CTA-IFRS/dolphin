@@ -129,6 +129,10 @@ function DolphinAppBar(props) {
             
             <DolphinConfigDrawer open={configDrawerOpen} onClose={handleConfigOpenDrawer} 
                 themeUpdater={props.themeUpdater}
+                selectedVoice={props.selectedVoice}
+                setSelectedVoice={props.setSelectedVoice}
+                speechRate={props.speechRate}
+                setSpeechRate={props.setSpeechRate}
                 anchor="right"
             />
             
