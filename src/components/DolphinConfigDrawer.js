@@ -160,7 +160,10 @@ export default function DolphinConfigDrawer({
     useEffect(() => {
         function loadVoices() {
             const voices = window.speechSynthesis.getVoices();
-            setVoices(voices);
+            const ptVoices = voices.filter(voice =>
+                voice.lang.toLowerCase().startsWith('pt')
+            );
+            setVoices(ptVoices);
 
             if (!selectedVoice) {
                 const ptVoice = voices.find((voice) => voice.lang === "pt-BR");
@@ -230,7 +233,7 @@ export default function DolphinConfigDrawer({
                             >
                                 {voices.map((voice) => (
                                     <option key={voice.name} value={voice.name}>
-                                        {voice.name} ({voice.lang})
+                                        {voice.name}
                                     </option>
                                 ))}
                             </select>

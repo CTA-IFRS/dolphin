@@ -74,12 +74,23 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: theme.palette.primaryButton.hover,
             color: theme.palette.primaryButton.textHover,
             borderColor: theme.palette.primaryButton.borderHover,
-        }
+        },
+        '@media (max-width:600px)': {
+            width: 48,
+            minWidth: 48,
+            marginLeft: -48,
+            "& .MuiButton-endIcon": {
+                marginLeft: 0
+            }
+        },
     },
 
     writeButtonText: {
         marginLeft: "auto",
         marginRight: "auto",
+        '@media (max-width:600px)': {
+            textIndent: -9999,
+        },
     },
 
     speakButton: {
@@ -97,7 +108,16 @@ const useStyles = makeStyles((theme) => ({
         "&:hover, &:focus, &:focus-visible": {
             backgroundColor: theme.palette.outlineButton.main,
             color: theme.palette.outlineButton.textHover,
-        }
+        },
+        '@media (max-width:600px)': {
+            width: 48,
+            minWidth: 48,
+            textIndent: -9999,
+            marginLeft: 8,
+            "& .MuiButton-endIcon": {
+                margin: 0
+            }
+        },
     },
 
 }));
@@ -139,7 +159,7 @@ export default function DolphinCommandBar(props) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <Box display="grid" gridTemplateColumns={talkerMonitor.talker.hasSupport() ? "1fr 193px" : "1fr"}>
+                <Box display="grid" gridTemplateColumns={talkerMonitor.talker.hasSupport() ? {xs: "1fr 48px", sm: "1fr 193px"} : "1fr"}>
                     <Box display="flex" flexDirection="row">
                         <TextField id="input-message" label="Digite sua fala"
                             fullWidth inputRef={inputMsgRef}

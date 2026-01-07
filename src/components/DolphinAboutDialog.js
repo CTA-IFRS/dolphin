@@ -82,7 +82,10 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "center",
         gap: "24px",
-        padding: "24px"
+        padding: "24px",
+        '@media (max-width:600px)': {
+            flexDirection: "column"
+        },
     },
 
     d_body: {
