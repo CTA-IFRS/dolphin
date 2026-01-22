@@ -142,10 +142,10 @@ function DolphinAboutDialog() {
             </DialogContent>
             <DialogActions className={classes.d_footer}>
                 <a href="https://cta.ifrs.edu.br">
-                    <img src="/logo-cta.png" height="55px" style={{backgroundColor: "white", padding: "12px", borderRadius: "8px"}} alt="Logo do CTA - Centro Tecnológico de Acessibilidade do IFRS"/>
+                    <img src="logo-cta.png" height="55px" style={{backgroundColor: "white", padding: "12px", borderRadius: "8px"}} alt="Logo do CTA - Centro Tecnológico de Acessibilidade do IFRS"/>
                 </a>
                 <a href="https://ifrs.edu.br">
-                    <img src="/logo-ifrs.png" height="55px" style={{backgroundColor: "white", padding: "12px", borderRadius: "8px"}} alt="Logo do IFRS - Instituto Federal de Educação Ciência e Tecnologia do Rio Grande do Sul"/>
+                    <img src="logo-ifrs.png" height="55px" style={{backgroundColor: "white", padding: "12px", borderRadius: "8px"}} alt="Logo do IFRS - Instituto Federal de Educação Ciência e Tecnologia do Rio Grande do Sul"/>
                 </a>
             </DialogActions>
         </Dialog>
