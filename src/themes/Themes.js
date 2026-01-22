@@ -1,5 +1,5 @@
 
-import { createTheme } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
 
 const baseTheme = {
   typography: {
@@ -9,7 +9,7 @@ const baseTheme = {
 
 export function getTheme(name) {
     if (name === "commom") {
-        return createTheme({
+        return createMuiTheme({
             ...baseTheme,
             palette: {
                 type: "light",
@@ -102,7 +102,7 @@ export function getTheme(name) {
         });
 
     } else if (name === "highContrast"){
-        return createTheme({
+        return createMuiTheme({
             ...baseTheme,
             palette: {
                 type: "dark",
@@ -183,7 +183,7 @@ export function getTheme(name) {
         });
 
     } else if (name === "sepia") {
-        return createTheme({
+        return createMuiTheme({
             ...baseTheme,
             palette: {
                 type: "light",
