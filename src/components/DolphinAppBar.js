@@ -27,6 +27,13 @@ const useStyles = makeStyles((theme) => ({
         width: 60,
         height: 60,
         color: theme.palette.text.primary,
+        
+        [theme.breakpoints.down(400)]: {
+            width: 44,
+            height: 44,
+            marginRight: 0,
+            marginLeft: 8
+        },
     },
 
     menuIcon: {
@@ -51,7 +58,19 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Atkinson Hyperlegible, sans-serif",
         fontWeight: 700,
         fontSize: 24,
-        marginLeft: 8
+        marginLeft: 8,
+
+        [theme.breakpoints.down(400)]: {
+            marginLeft: 0
+        },
+    },
+
+    dolphinLogoImg: {
+        width: 85,
+
+        [theme.breakpoints.down(400)]: {
+            width: 65,
+        },
     }
 }));
 
@@ -91,7 +110,7 @@ function DolphinAppBar(props) {
             <Toolbar>
 
                 <a href="/dolphin" className={classes.dolphinLogoName}>
-                <img src={props.themeUpdater.themeName === "highContrast" ? "logo-dolphin-white.png" : "logo-dolphin.png"} width={85} alt="Logo do Dolphin"/>
+                <img className={classes.dolphinLogoImg} src={props.themeUpdater.themeName === "highContrast" ? "logo-dolphin-white.png" : "logo-dolphin.png"} alt="Logo do Dolphin"/>
                     {/* <img src="logo-dolphin.png" width={50} alt="Logo do Dolphin"/> */}
                 </a>
                 <Typography variant="h6" component="h1" className={classes.titleBar}>
