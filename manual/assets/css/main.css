@@ -41,3 +41,23 @@ nav.barra-acessibilidade .btn-a11y {
 #docs-nav .nav-link:hover {
     color: #00838F;
 }
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: #212529 !important;
+}
+
+.docs-content {
+    padding-bottom: 0;
+}
+
+nav.barra-acessibilidade .badge.badge-dark {
+    color: #fff;
+    background-color: #343a40;
+    padding: .25em .4em;
+    border-radius: .25rem;
+}
+
+.docs-article .docs-time {
+    font-size: 13px;
+    color: #495057;
+}

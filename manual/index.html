@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="../css/high_contrast.css">
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
 
 <body class="docs-page">
@@ -42,6 +43,19 @@
             </button>
             <div id="menuAcessibilidade" class="collapse navbar-collapse">
 
+                <ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link text-dark py-0" href="#conteudo-principal" accesskey="1"><small>Ir para o conteúdo
+							<span class="badge badge-dark">1</span></small>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-dark py-0" href="#menu-principal" accesskey="2"><small>Ir para o menu
+							<span class="badge badge-dark">2</span></small>
+						</a>
+					</li>
+				</ul>
+
                 <ul class="navbar-nav navbar-right ml-auto">
                     <li class="nav-item my-2 my-md-0">
                         <a class="nav-link text-dark py-0" id="high_contrast" aria-checked="false" href="#"><small><i
@@ -52,7 +66,7 @@
         </nav>
 
         <div class="branding docs-branding">
-            <div class="container-fluid position-relative py-2">
+            <div class="container-fluid position-relative py-3">
                 <div class="docs-logo-wrapper">
                     <button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none" type="button">
                         <span></span>
@@ -66,12 +80,14 @@
                     <!-- <a href="index.html" class="btn btn-secondary d-none d-lg-flex">Voltar para homepage</a> -->
                     <div class="site-logo align-items-start">
                         <a class="navbar-brand" href="../">
-                            <img class="logo-icon me-2" src="../img/dolphin.png" height="80px" alt="logomarca do Dolphin em formato de um golfinho">
-                            <span class="logo-text text-alt">Dolphin</span>
+                            <img class="logo-icon me-2" src="../img/dolphin.png" width="85px" alt="logomarca do Dolphin em formato de um golfinho">
+                            <span class="h4">Dolphin</span>
                         </a>
                     </div>
                     <div class="ms-auto">
-                        <a href="/dolphin/dolphin/index.html" class=" ms-3 btn btn-info d-none d-lg-flex btn-goto-dolphin">Acessar o Dolphin</a>
+                        <a href="/dolphin/dolphin/index.html" class=" ms-3 btn btn-primary d-none d-lg-flex btn-goto-dolphin">Acessar o Dolphin
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right ms-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
                     </div>
                 </div>
 
@@ -101,7 +117,7 @@
     <!--//branding-->
     </header>
     <!--//header-->
-    <div class="docs-wrapper ms-3">
+    <div class="docs-wrapper">
         <a href="#" class="sr-only" id="menu-principal">Início do menu</a>
         <div id="docs-sidebar" class="docs-sidebar">
             <div class="top-search-box d-lg-none p-3">
@@ -143,12 +159,12 @@
             <h1 class="sr-only">Dolphin - Manuais</h1>
             <article class="docs-article" id="section-1">
                 <header class="docs-header">
-                    <h2 class="docs-heading">Introdução</h2>
+                    <h2 class="docs-heading">Introdução <span class="docs-time">Última atualização: 12/03/2026</span></h2>
                     <section class="docs-intro">
-                        <p>A Ferramenta de comunicação Dolphin foi desenvolvida pelo Centro Tecnológico de Acessibilidade (CTA) com o objetivo de auxiliar pessoas que tenham alguma dificuldade na fala e/ou na audição. A ferramenta possibilita que a pessoa
-                            digite em seu teclado o que deseja comunicar e ao clicar na opção de “Falar” da ferramenta ela irá vocalizar a palavra, frase ou número escrito. Além disso é possíel que a pessoa utilize o microfone para falar e o que for dito
-                            apareça no chat. É possível utilizar o Dolphin no computador através de um navegador de internet ou instalá-la em seu dispositivo móvel (smartphone ou tablet), quando instalado no dispositivo ele funciona sem precisar estar
-                            conectado na Internet . O processo de instalação é o mesmo tanto para Android, quanto para iOS.
+                        <p class="lead-text2">A Ferramenta de comunicação Dolphin foi desenvolvida pelo Centro Tecnológico de Acessibilidade (CTA) com o objetivo de auxiliar pessoas que tenham alguma dificuldade na fala e/ou na audição. A ferramenta possibilita que a pessoa 
+                            digite em seu teclado o que deseja comunicar e, ao clicar na opção de “Enviar” da ferramenta, ela irá vocalizar a palavra, frase ou número escrito. Além disso, é possível que a pessoa utilize o botão "Enviar fala" para falar e o que for dito 
+                            apareça no chat. É possível utilizar o Dolphin no computador através de um navegador de internet ou instalá-lo em seu dispositivo móvel (smartphone ou tablet). Quando instalado no dispositivo, ele funciona sem precisar estar 
+                            conectado à Internet. O processo de instalação é o mesmo tanto para Android quanto para iOS.
                         </p>
                     </section>
                     <!--//docs-intro-->
@@ -159,57 +175,57 @@
                 <header class="docs-header">
                     <h2 class="docs-heading">Manual de instalação</h2>
                     <section class="docs-intro">
-                        <p>Para instalar o Dolphin em seu dispositivo, primeiramente, é necessário <a href="/dolphin/dolphin/index.html " target="_blank ">acessar a ferramenta <span class="sr-only ">abre em nova aba</span></a> em seu dispositivo.</p>
-                        <p>Observação: No iOS a instalação do Dolphin deverá ser feita pelo navegador Safari, pois no momento o Chrome para iOS não possui esta opção. Devido a forma de gerenciamento dos WebApps no Safari, alguns recursos do Dolphin podem
-                            não estar disponíveis quando instalados. Porém a utilização no navegador funcionará normalmente.</p>
+                        <p class="lead-text2">Para instalar o Dolphin em seu dispositivo, primeiramente, é necessário <a href="/dolphin/dolphin/index.html " target="_blank ">acessar a ferramenta <span class="sr-only ">abre em nova aba</span></a> em seu dispositivo.</p>
+                        <p class="lead-text2">Observação: No iOS, a instalação do Dolphin deverá ser feita pelo navegador Safari, pois, no momento, o Chrome para iOS não possui esta opção. Devido à forma de gerenciamento dos WebApps no Safari, alguns recursos do Dolphin podem
+                            não estar disponíveis quando instalados. Porém, a utilização no navegador funcionará normalmente.</p>
                     </section>
                 </header>
                 <section class="docs-section" id="item-2-1">
                     <h3 class="section-heading">Instalando em Android</h3>
-                    <p>Após acessar a ferramenta em seu dispositivo, clique nos três pontinhos localizados no canto superior direito da barra de navegação conforme a imagem a seguir.</p>
+                    <p class="base-text2">Após acessar a ferramenta em seu dispositivo, clique nos três pontinhos localizados no canto superior direito da barra de navegação conforme a imagem a seguir.</p>
                     <img src="../img/install-01.png " alt="Dolphin com o menu de três pontinhos marcado " class="img-fluid img-thumbnail ounded mx-auto d-block imginstall ">
                 </section>
                 <!--//section-->
 
                 <section>
-                    <p>Após, procure a opção “Instalar Aplicativo”, conforme mostra a próxima imagem.</p>
+                    <p class="base-text2">Após, procure a opção <strong>“Instalar Aplicativo”</strong> ou <strong>“Adicionar à tela inicial”</strong>, conforme mostra a próxima imagem.</p>
                     <img src="../img/install-02.png " alt="Dolphin com o menu aberto e a opção 'Instalar aplicativo' marcada " class="img-fluid img-thumbnail ounded mx-auto d-block imginstall ">
                 </section>
                 <!--//section-->
 
                 <section>
-                    <p>Ao clicar nesta opção, aparecerá uma janela solicitando a instalação da ferramenta, mostrada na imagem a seguir. Clique em “Instalar” e aguarde a finalização do processo.</p>
+                    <p class="base-text2">Ao clicar nesta opção, aparecerá uma janela solicitando a instalação da ferramenta, mostrada na imagem a seguir. Clique em <strong>“Instalar”</strong> e aguarde a finalização do processo.</p>
                     <img src="../img/install-03.png " alt="Mensagem solicitando se o usuário deseja instalar o Dolphin " class="img-fluid img-thumbnail ounded mx-auto d-block imginstall ">
                 </section>
                 <!--//section-->
 
                 <section>
-                    <p>Pronto! A ferramenta de comunicação Dolphin já está instalada no seu smartphone. Para abrí-lo basta ir até a lista de aplicativos do dispositivo e clicar no ícone do Dolphin.</p>
+                    <p class="base-text2">Pronto! A ferramenta de comunicação Dolphin já está instalada no seu smartphone. Para abrí-lo basta ir até a lista de aplicativos do dispositivo e clicar no ícone do <strong>Dolphin</strong>.</p>
                     <img src="../img/install-04.png " alt="Menu do celular com o ícone do aplicativo Dolphin instalado " class="img-fluid img-thumbnail ounded mx-auto d-block imginstall ">
                 </section>
                 <!--//section-->
 
                 <section class="docs-section" id="item-2-2">
                     <h3 class="section-heading">Instalando em iOS</h3>
-                    <p>Após acessar a ferramenta em seu dispositivo, por meio do safari, clique na seta (<i class="fa-solid fa-arrow-up-from-bracket"></i>) localizada no canto superior direito da barra de navegação conforme a imagem a seguir.</p>
+                    <p class="base-text2">Após acessar a ferramenta em seu dispositivo, por meio do safari, clique na seta (<i class="fa-solid fa-arrow-up-from-bracket"></i>) localizada no canto superior direito da barra de navegação conforme a imagem a seguir.</p>
                     <img src="../img/install-05.jpeg " alt="Dolphin com o menu a seta marcada" class="img-fluid img-thumbnail ounded mx-auto d-block imginstall" style="width: 500px; height: 618px;">
                 </section>
                 <!--//section-->
 
                 <section>
-                    <p>Após, procure a opção “Adicionar a Tela de Início”, conforme mostra a próxima imagem.</p>
+                    <p class="base-text2">Após, procure a opção “Adicionar a Tela de Início”, conforme mostra a próxima imagem.</p>
                     <img src="../img/install-06.jpeg " alt="Dolphin com o menu aberto e a opção 'Adicionar a Tela de Início' marcada " class="img-fluid img-thumbnail ounded mx-auto d-block imginstall " style="width: 500px; height: 618px;">
                 </section>
                 <!--//section-->
 
                 <section>
-                    <p>Ao clicar nesta opção, aparecerá uma janela avisando que a ferramenta será adicionada a tela inicial, como mostra a imagem a seguir. Clique em “Adicionar” e aguarde a finalização do processo.</p>
+                    <p class="base-text2">Ao clicar nesta opção, aparecerá uma janela avisando que a ferramenta será adicionada a tela inicial, como mostra a imagem a seguir. Clique em “Adicionar” e aguarde a finalização do processo.</p>
                     <img src="../img/install-07.jpeg " alt="Mensagem solicitando se o usuário deseja instalar o Dolphin e  opção 'Adicionar' marcada" class="img-fluid img-thumbnail ounded mx-auto d-block imginstall " style="width: 500px; height: 618px;">
                 </section>
                 <!--//section-->
 
                 <section>
-                    <p>Pronto! A ferramenta de comunicação Dolphin já está instalada no seu smartphone. Para abrí-lo basta ir até a lista de aplicativos do dispositivo e clicar no ícone do Dolphin.</p>
+                    <p class="base-text2">Pronto! A ferramenta de comunicação Dolphin já está instalada no seu smartphone. Para abrí-lo basta ir até a lista de aplicativos do dispositivo e clicar no ícone do Dolphin.</p>
                     <img src="../img/install-08.jpeg " alt="Menu do celular com o ícone do aplicativo Dolphin instalado " class="img-fluid img-thumbnail ounded mx-auto d-block imginstall " style="width: 500px; height: 618px;">
                 </section>
                 <!--//section-->
@@ -223,41 +239,43 @@
                 <header class="docs-header ">
                     <h2 class="docs-heading">Manual de uso</h1>
                         <section class="docs-intro ">
-                            <p>Pelo fato da ferramenta de comunicação Dolphin poder ser usado em dispositivos móveis e em computadores apresentamos a seguir os manuais de uso para cada um dos casos.
+                            <p class="lead-text2">Pelo fato da ferramenta de comunicação Dolphin poder ser usado em dispositivos móveis e em computadores apresentamos a seguir os manuais de uso para cada um dos casos.
                             </p>
                         </section>
                         <!--//docs-intro-->
                 </header>
                 <section class="docs-section " id="item-3-1">
                     <h3 class="section-heading">Utilizando em dispositivos móveis</h2>
-                        <p>O Dolphin é bastante simples de utilizar. Após abrir o aplicativo, a pessoa deverá escrever o que deseja comunicar, e em seguida clicar na opção <strong>"Falar "</strong>, representada pelo ícone de alto-falante ou pressionar a
-                            tecla
-                            <strong>"Enter "</strong> de seu teclado. Ao clicar nesta opção, a ferramenta irá vocalizar a palavra ou frase digitada. A imagem a seguir mostra a localização da opção Falar.
+                        <p class="base-text2">O Dolphin é bastante simples de utilizar. Após abrir o aplicativo, a pessoa deverá escrever o que deseja comunicar e, em seguida, clicar na opção <strong>"Enviar"</strong>, representada pelo ícone de avião de papel, ou pressionar a tecla <strong>"Enter"</strong> de seu teclado. Ao clicar nesta opção, a ferramenta irá vocalizar a palavra ou frase digitada. A imagem a seguir mostra a localização da opção Enviar.
                         </p>
-                        <img src="../img/usage-01.png " alt="Aplicativo Dolphin com o botão 'Falar' marcado " class="img-fluid img-thumbnail ounded mx-auto d-block ">
-                        <p class="mt-4 ">Caso deseje realizar a conversão de fala para texto, ative a opção do Microfone (<i class="fas fas fas fa-microphone-slash "></i>) indicado na imagem a seguir e comunique por meio da fala o que deseja comunicar para que a ferramenta
+                        <img src="../img/usage-01.png " width="300px" alt="Aplicativo Dolphin com o botão 'Falar' marcado " class="img-fluid img-thumbnail ounded mx-auto d-block ">
+                        <p class="mt-4 base-text2">Caso deseje realizar a conversão de fala para texto, ative a opção do Microfone (<i class="fas fas fas fa-microphone-slash "></i>) indicado na imagem a seguir e comunique por meio da fala o que deseja comunicar para que a ferramenta
                             transforme sua fala em texto.</p>
-                        <img src="../img/usage-02.png " alt="Aplicativo Dolphin com o microfone marcado " class="img-fluid img-thumbnail ounded mx-auto d-block ">
-                        <p class="mt-4 ">A ferramenta de comunicação conta ainda com outros dois recursos:
-                            <strong>Alto contraste</strong>, e o modo <strong>Sépia</strong>. Esses recursos podem ser acessados clicando-se no ícone de
-                            <strong>"menu "</strong> localizado na parte superior esquerda do aplicativo.
+                        <img src="../img/usage-02.png " width="300px" alt="Aplicativo Dolphin com o microfone marcado " class="img-fluid img-thumbnail ounded mx-auto d-block ">
+                        <p class="mt-4 base-text2">A ferramenta de comunicação conta ainda com os seguintes recursos: <strong>Alteração do tamanho da fonte</strong>, <strong>Contraste Normal</strong>, <strong>Modo Sépia</strong>, <strong>Alto Contraste</strong>, <strong>seleção de voz</strong> e <strong>velocidade de reprodução</strong> da voz selecionada.
+                            Esses recursos podem ser acessados clicando-se no ícone de
+                            <strong>"menu de configurações"</strong> localizado na parte superior direita do aplicativo.
                         </p>
-                        <img src="../img/usage-03.png " alt="Aplicativo Dolphin com o menu marcado " class="img-fluid img-thumbnail ounded mx-auto d-block ">
-                        <p class="mt-4 ">Ao clicar no ícone de <strong>"menu "</strong>, será aberta uma barra contendo os dois recursos do aplicativo, conforme mostrado na imagem a seguir.</p>
-                        <img src="../img/usage-04.png " alt="Aplicativo Dolphin exibindo o menu com os dois recursos 'Alto contraste' e 'Sépia' " class="img-fluid img-thumbnail ounded mx-auto d-block ">
-                        <p class="mt-4 ">O primeiro ícone é a opção <strong>"Normal "</strong>, onde a ferramenta se encontra automaticamente com suas cores definidas com padrões. </p>
-                        <img src="../img/usage-05.png " alt="Aplicativo Dolphin exibido no modo 'Normal' " class="img-fluid img-thumbnail ounded mx-auto d-block ">
-                        <p class="mt-4 ">O segundo ícone é a opção <strong>"Alto contraste "</strong>onde o esquema de cores é invertido, fazendo com que o fundo fique preto e os caracteres fiquem brancos. </p>
-                        <img src="../img/usage-06.png " alt="Aplicativo Dolphin exibido em 'Alto contraste' " class="img-fluid img-thumbnail ounded mx-auto d-block ">
-                        <p class="mt-4 ">O terceiro e último ícone é a opção <strong>"Sépia "</strong> onde o fundo da ferramenta fica amarelado. </p>
-                        <img src="../img/usage-07.png " alt="Aplicativo Dolphin exibido em 'Sépia' " class="img-fluid img-thumbnail ounded mx-auto d-block ">
+                        <img src="../img/usage-03.png " width="300px" alt="Aplicativo Dolphin com o menu marcado " class="img-fluid img-thumbnail ounded mx-auto d-block ">
+                        <p class="mt-4 base-text2">Ao clicar no ícone de <strong>"menu de configurações"</strong>, será aberta uma barra contendo os recursos do aplicativo, conforme mostrado na imagem a seguir.</p>
+                        <img src="../img/usage-04.png " width="300px" alt="Aplicativo Dolphin exibindo o menu com os dois recursos 'Alto contraste' e 'Sépia' " class="img-fluid img-thumbnail ounded mx-auto d-block ">
+                        <p class="mt-4 base-text2">Na primeira seção do menu, são encontrados os botões para alterar o tamanho da fonte para maior, menor ou restaurar o tamanho padrão.</p>
+                        <p class="mt-4 base-text2">Na segunda seção do menu, são encontrados os modos de contraste. O primeiro item é o <strong>"Contraste Normal"</strong>. Esse modo apresenta a interface com cores padrão, mantendo o fundo claro e os caracteres escuros.
+                        </p>
+                        <img src="../img/usage-05.png " width="300px" alt="Aplicativo Dolphin exibido no modo 'Normal' " class="img-fluid img-thumbnail ounded mx-auto d-block ">
+                        <p class="mt-4 base-text2">O segundo item é o modo <strong>"Sépia"</strong>. Esse modo aplica um filtro sépia à interface, suavizando o contraste entre fundo e texto, o que pode proporcionar maior conforto visual em uso prolongado. A próxima imagem mostra a farramenta Dolphin com o modo "Sépia" ativado.
+                        </p>
+                        <img src="../img/usage-06.png " width="300px" alt="Aplicativo Dolphin exibido em 'Sépia' " class="img-fluid img-thumbnail ounded mx-auto d-block ">
+                        <p class="mt-4 base-text2">O terceiro item é o <strong>"Alto contraste"</strong>. Esse modo inverte o esquema de cores, fazendo com que o fundo fique preto e os caracteres fiquem brancos. A próxima imagem mostra a ferramenta Dolphin com o modo "Alto Contraste" ativado.
+                        </p>
+                        <img src="../img/usage-07.png " width="300px" alt="Aplicativo Dolphin exibido em 'Alto contraste' " class="img-fluid img-thumbnail ounded mx-auto d-block ">
 
                 </section>
                 <!--//section-->
 
                 <section class="docs-section " id="item-3-2">
                     <h2 class="section-heading">Utilizando no computador</h2>
-                    <p>Para usar o Dolphin no computador, você deve abrir um navegador de Internet e acessar a página da versão online da ferramenta Dolphin. As funcionalidades e configurações são as mesmas que as presentes quando instalado em um dispositivo
+                    <p class="base-text2">Para usar o Dolphin no computador, você deve abrir um navegador de Internet e acessar a página da versão online da ferramenta Dolphin. As funcionalidades e configurações são as mesmas que as presentes quando instalado em um dispositivo
                         móvel.
                     </p>
                 </section>
