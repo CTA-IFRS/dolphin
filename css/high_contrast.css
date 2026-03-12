@@ -50,7 +50,7 @@
     .alto-contraste .btn-primary,
     .alto-contraste .btn-dark,
     .alto-contraste span.badge,
-    .alto-contraste .menu-principal .navbar-toggler {
+    .alto-contraste .navbar-toggler {
         background-color: #ffffff !important;
         color: #000000 !important;
     }
@@ -79,4 +79,37 @@
     
     .alto-contraste .btn {
         border: 1px #026E81 solid !important;
+    }
+
+    .alto-contraste .navbar-light .navbar-brand {
+        filter: brightness(10);
+    }
+
+    .alto-contraste .btn.btn-primary,
+    .alto-contraste .btn.btn-primary:hover,
+    .alto-contraste .btn.btn-primary:focus,
+    .alto-contraste .btn.btn-primary:focus-visible,
+    .alto-contraste .btn.btn-dark {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    .alto-contraste .btn-dark:focus, .alto-contraste .btn-dark:hover, .alto-contraste .btn-primary:focus, .alto-contraste .btn-primary:hover, .alto-contraste .btn-primary:not(:disabled):not(.disabled).active:focus, .alto-contraste .btn-primary:not(:disabled):not(.disabled):active:focus, .alto-contraste .show > .btn-primary.dropdown-toggle:focus, .alto-contraste .btn-primary.focus, .btn-primary:focus {
+        box-shadow: 0 0 1em #F0D9F2 !important;
+    }
+    
+    .alto-contraste .h1,
+    .alto-contraste .h2,
+    .alto-contraste .h3,
+    .alto-contraste .h4,
+    .alto-contraste .h5,
+    .alto-contraste .h6,
+    .alto-contraste h1,
+    .alto-contraste h2,
+    .alto-contraste h3,
+    .alto-contraste h4,
+    .alto-contraste h5,
+    .alto-contraste h6,
+    .alto-contraste .base-text2 {
+        color: var(--white);
     }

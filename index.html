@@ -26,7 +26,7 @@
 <body>
     <!-- Barra de acessibilidade -->
     <nav class="barra-acessibilidade navbar navbar-expand-sm navbar-dark" aria-label="Menu de acessibilidade">
-        <button type="button" class="navbar-toggler bg-dark" data-toggle="collapse" data-target="#menuAcessibilidade" aria-controls="menuAcessibilidade" aria-expanded="false" aria-label="Expandir menu">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menuAcessibilidade" aria-controls="menuAcessibilidade" aria-expanded="false" aria-label="Expandir menu">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="menuAcessibilidade" class="collapse navbar-collapse">
@@ -44,7 +44,7 @@
             </ul>
             <ul class="navbar-nav navbar-right ml-auto">
                 <li class="nav-item my-2 my-md-0">
-                    <a class="nav-link text-dark py-0" id="high_contrast" aria-checked="false" href=""><small><i class="bi bi-circle-half">&nbsp;</i> Alto contraste</small></a>
+                    <a class="nav-link text-dark py-0" id="high_contrast" aria-checked="false" href="#"><small><i class="bi bi-circle-half">&nbsp;</i> Alto contraste</small></a>
                 </li>
             </ul>
         </div>
@@ -52,9 +52,9 @@
 
     <!-- Menu principal -->
     <a href="#menu-principal" id="menu-principal" class="sr-only">Início do menu principal</a>
-    <nav class="navbar navbar-expand-lg navbar-light bg-ciano50 menu-principal">
-        <div class="container py-1">
-            <a class="navbar-brand" id="beluga" href=""><img src="img/dolphin.png" height="80px" alt="logotipo do Dolphin"> Dolphin</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light menu-principal">
+        <div class="container py-3">
+            <a class="navbar-brand h4" id="dolphin" href=""><img src="img/dolphin.png" width="85px" alt="logotipo do Dolphin"> Dolphin</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -86,10 +86,10 @@
         <div class="row gx-5 align-items-center pb-5">
             <div class="col-md-6 aos-init aos-animate" data-aos="fade-up">
                 <h1 class="display-4 mb-3 font-weight-bold"><strong>Ferramenta de comunicação</strong></h1>
-                <p class="page-header-ui-text mb-5 pr-4">O aplicativo Dolphin é uma ferramenta de comunicação que permite a troca de textos entre usuários locais com auxílio de um conversor de voz para texto e vice-versa.
+                <p class="page-header-ui-text mb-5 pr-4 lead-text2">O aplicativo Dolphin é uma ferramenta de comunicação que permite a troca de textos entre usuários locais com auxílio de um conversor de voz para texto e vice-versa.
                 </p>
                 <div class="d-flex flex-column flex-sm-row">
-                    <a class="btn btn-ciano800  text-white fw-500 py-2 px-4 me-sm-3 mb-3 mb-sm-0" href="dolphin/index.html">
+                    <a class="btn btn-primary fw-500 py-2 px-4 me-sm-3 mb-3 mb-sm-0" href="dolphin/index.html">
                         Acessar o Dolphin
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -112,17 +112,17 @@
         </div>
         <div class="row py-4">
             <div class="col-sm-12">
-                <blockquote class="blockquote text-center text-black-50">
+                <blockquote class="blockquote text-center text-gray700 lead-text2">
                     <p>Ferramenta de comunicação</p>
                 </blockquote>
             </div>
         </div>
         <div class="row mt-2">
             <div class="col-sm-7 text-black-50">
-                <p>O Dolphin é uma ferramenta de comunicação. Através dela, é possível se comunicar com uma outra pessoa por meio de texto e voz.</p>
-                <p>O aplicativo contém um campo para digitar mensagens, um botão para envio/fala de mensagens, um botão que habilita o microfone para que a fala seja convertida em texto, e um outro botão de áudio que quando ativado dita o conteúdo enviado
+                <p class="base-text2">O Dolphin é uma ferramenta de comunicação. Através dela, é possível se comunicar com uma outra pessoa por meio de texto e voz.</p>
+                <p class="base-text2">O aplicativo contém um campo para digitar mensagens, um botão para envio/fala de mensagens, um botão que habilita o microfone para que a fala seja convertida em texto, e um outro botão de áudio que quando ativado dita o conteúdo enviado
                     via texto. Nas configurações, a aplicação oferece opção de modo alto contraste e sépia.</p>
-                <p>Desenvolvido pelo Centro Técnológico de Acessibilidade do Instituto Federal de Educação, Ciências e Tecnologia do Rio Grande do Sul, disponibilizado de forma gratuita e com código fonte sob a licença GPLv3 e Creative Commons NonCommercial-ShareAlike
+                <p class="base-text2">Desenvolvido pelo Centro Técnológico de Acessibilidade do Instituto Federal de Educação, Ciências e Tecnologia do Rio Grande do Sul, disponibilizado de forma gratuita e com código fonte sob a licença GPLv3 e Creative Commons NonCommercial-ShareAlike
                     3.0 Unported (CC BY-NC-SA 3.0)</p>
             </div>
             <div class="col-sm-5">
@@ -134,35 +134,35 @@
         </div>
         <ul class="row list-unstyled">
             <li class="media col-sm-6 float-left mb-4">
-                <img class="mr-3 border bg-ciano400" src="img/bullet-tts.png" alt="Texto para voz">
+                <img class="mr-3 border" src="img/bullet-tts.png" alt="Texto para voz">
                 <div class="media-body">
                     <h4 class="h6 text-uppercase font-weight-bold mt-0 mb-2">Texto para voz</h4>
                     <small>O Dolphin pode realizar a leitura em voz alta do texto que for enviado.</small>
                 </div>
             </li>
             <li class="media col-sm-6 float-left mb-4">
-                <img class="mr-3 border bg-ciano400" src="img/controle-de-voz.png" alt="Voz para texto">
+                <img class="mr-3 border" src="img/controle-de-voz.png" alt="Voz para texto">
                 <div class="media-body">
                     <h4 class="h6 text-uppercase font-weight-bold mt-0 mb-2">Voz para texto</h4>
                     <small>O Dolphin pode converter voz para texto.</small>
                 </div>
             </li>
             <li class="media col-sm-6 float-left mb-4">
-                <img class="mr-3 border bg-ciano400" src="img/janela-de-conversa.png" alt="Histórico de conversas">
+                <img class="mr-3 border" src="img/janela-de-conversa.png" alt="Histórico de conversas">
                 <div class="media-body">
                     <h4 class="h6 text-uppercase font-weight-bold mt-0 mb-2">Histórico de conversas</h4>
                     <small>O Dolphin disponibiliza o histórico dos textos que foram enviados durante o uso da ferramenta.</small>
                 </div>
             </li>
             <li class="media col-sm-6 float-left mb-4">
-                <img class="mr-3 border bg-ciano400" src="img/bullet-no-ads.png" alt="Gratuito e sem propagandas">
+                <img class="mr-3 border" src="img/bullet-no-ads.png" alt="Gratuito e sem propagandas">
                 <div class="media-body">
                     <h4 class="h6 text-uppercase font-weight-bold mt-0 mb-2">Gratuito e sem propagandas</h4>
                     <small>O Dolphin foi desenvolvido pelo Centro Tecnológico de Acessibilidade do IFRS e disponibilizado gratuitamente para ser utilizado, sem anúncios, por quem precisa.</small>
                 </div>
             </li>
             <li class="media col-sm-6 float-left mb-4">
-                <img class="mr-3 border bg-ciano400" src="img/bullet-contrast.png" alt="Diferentes esquemas de cores">
+                <img class="mr-3 border" src="img/bullet-contrast.png" alt="Diferentes esquemas de cores">
                 <div class="media-body">
                     <h4 class="h6 text-uppercase font-weight-bold mt-0 mb-2">Diferentes esquemas de cores</h4>
                     <small>Nas configurações, é possível alternar entre o modo normal, alto contraste e sépia, que modificam o esquema de cores da ferramenta de comunicação, 
@@ -171,7 +171,7 @@
                 </div>
             </li>
             <li class="media col-sm-6 float-left mb-4">
-                <img class="mr-3 border bg-ciano400" src="img/bullet-multi.png" alt="Online ou instalado">
+                <img class="mr-3 border" src="img/bullet-multi.png" alt="Online ou instalado">
                 <div class="media-body">
                     <h4 class="h6 text-uppercase font-weight-bold mt-0 mb-2">Online ou instalado</h4>
                     <small>O Dolphin pode ser acessado através de um navegador de internet ou pode ser instalado em seu dispositivo podendo ser usado mesmo sem conexão de internet.</small>
@@ -180,18 +180,18 @@
         </ul>
     </div>
 
-    <div class=" py-5 bg-ciano10" id="manuals">
+    <div class="py-5 bg-light" id="manuals">
         <div class="container">
             <div class="row">
                 <h2 class="h1 col-sm font-weight-bold text-left mt-2"><span class="sr-only">Manuais - </span>Aproveite ao máximo este App</h2>
             </div>
             <div class="row">
                 <div class="col-sm-8">
-                    <p class="mt-4 text-black-50">Disponibilizamos o manual de uso para que você aprenda a usar todas as funcionalidades disponíveis no Dolphin. Também ensinamos a instalar em seu dispositivo no manual de instalação.</p>
+                    <p class="mt-4 lead-text3">Disponibilizamos o manual de uso para que você aprenda a usar todas as funcionalidades disponíveis no Dolphin. Também ensinamos a instalar em seu dispositivo no manual de instalação.</p>
                 </div>
                 <div class="col-sm-4">
-                    <a href="manual/index.html#section-3" class="btn btn-ciano800 text-white  col-12 mb-3 mt-2">Manual de uso</a>
-                    <a href="manual/index.html#section-2" class="btn btn-ciano800 text-white col-12">Manual de instalação</a>
+                    <a href="manual/index.html#section-3" class="btn btn-dark col-12 mb-3 mt-2">Manual de uso</a>
+                    <a href="manual/index.html#section-2" class="btn btn-dark col-12">Manual de instalação</a>
                 </div>
             </div>
         </div>
@@ -203,25 +203,25 @@
                 <h2 class="col h1 font-weight-bold text-center">Ajude-nos a melhorar</h2>
             </div>
             <div class="row justify-content-center">
-                <p class="col-8 mt-3 mb-4 text-center">Seu feedback é muito importante. Envie um e-mail para nós contando sua experiência para identificarmos o que podemos melhorar, assim como, os pontos positivos.
+                <p class="col-8 mt-3 mb-4 text-center lead-text3">Seu feedback é muito importante. Envie um e-mail para nós contando sua experiência para identificarmos o que podemos melhorar, assim como, os pontos positivos.
                 </p>
             </div>
             <div class="row justify-content-center mb-5 pb-5">
                 <div class="col-sm-3 text-center">
-                    <a href="mailto:cta@ifrs.edu.br" class="btn text-white py-2 btn-ciano800  ">E-mail: cta@ifrs.edu.br</a>
+                    <a href="mailto:cta@ifrs.edu.br" class="btn btn-dark py-2">E-mail: cta@ifrs.edu.br</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="py-5 bg-ciano10" id="contribute">
+    <div class="py-5 bg-light" id="contribute">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
                     <h2 class="h1 font-weight-bold">Contribua com o projeto</h2>
-                    <p class="text-black-50 pt-2 mt-4 mb-4">O projeto desse App está hospedado no GitHub para que você, desenvolvedor ou empresa, contribua com melhorias ou correções caso encontrem algum bug.</p>
+                    <p class="lead-text3 pt-2 mt-4 mb-4">O projeto desse App está hospedado no GitHub para que você, desenvolvedor ou empresa, contribua com melhorias ou correções caso encontrem algum bug.</p>
                     <div class="gh-button">
-                        <a href="https://github.com/CTA-IFRS/dolphin" class="btn btn-ciano800 text-white py-2 px-5">GitHub do
+                        <a href="https://github.com/CTA-IFRS/dolphin" class="btn btn-dark btn-fit py-2 px-5">GitHub do
                             projeto</a>
                     </div>
                 </div>
@@ -237,38 +237,38 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-12">
                     <h2 class="font-weight-bold text-center text-sm-left">Entre em contato</h2>
-                    <p class="text-black-50 pt-2 mt-4 mb-3">Para conhecer mais sobre os trabalhos e projetos desenvolvidos pelo CTA acesse nosso site ou redes sociais disponíveis na lista abaixo.</p>
+                    <p class="lead-text3 pt-2 mt-4 mb-3">Para conhecer mais sobre os trabalhos e projetos desenvolvidos pelo CTA acesse nosso site ou redes sociais disponíveis na lista abaixo.</p>
                     <ul class="list-unstyled pl-2 pl-sm-0">
                         <li>
-                            <a class="text-black-50" href="mailto:cta@ifrs.edu.br"><small><i class="bi bi-envelope">
+                            <a class="text-black-50" href="mailto:cta@ifrs.edu.br"><small class="base-text2"><i class="bi bi-envelope mr-1">
                                     </i>cta@ifrs.edu.br</small></a>
                         </li>
                         <li>
-                            <a class="text-black-50" href="https://cta.ifrs.edu.br"><small><i class="bi bi-cursor">
+                            <a class="text-black-50" href="https://cta.ifrs.edu.br"><small class="base-text2"><i class="bi bi-cursor mr-1">
                                     </i>cta.ifrs.edu.br</small></a>
                         </li>
                         <li>
-                            <a class="text-black-50" href="https://instagram.com/cta-ifrs"><small><i
-                                        class="bi bi-instagram"> </i>instagram.com/cta-ifrs</small></a>
+                            <a class="text-black-50" href="https://instagram.com/ctaifrs"><small class="base-text2"><i
+                                        class="bi bi-instagram mr-1"> </i>instagram.com/ctaifrs</small></a>
                         </li>
                         <li>
-                            <a class="text-black-50" href="https://youtube.com/cta-ifrs"><small><i
-                                        class="bi bi-youtube"> </i>youtube.com/cta-ifrs</small></a>
+                            <a class="text-black-50" href="https://youtube.com/cta-ifrs"><small class="base-text2"><i
+                                        class="bi bi-youtube mr-1"> </i>youtube.com/cta-ifrs</small></a>
                         </li>
                         <li>
-                            <a class="text-black-50" href="https://facebook.com/cta-ifrs"><small><i
-                                        class="bi bi-facebook"> </i>facebook.com/cta-ifrs</small></a>
+                            <a class="text-black-50" href="https://facebook.com/cta-ifrs"><small class="base-text2"><i
+                                        class="bi bi-facebook mr-1"> </i>facebook.com/cta-ifrs</small></a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-6 col-sm-12 col-12 mt-4 pt-lg-5 pt-sm-1">
                     <div class="row">
                         <div class="col-8">
-                            <img class="w-100 " src="img/logo-cta.png" alt="logo CTA">
+                            <img class="w-100 rounded" src="img/logo-cta.png" alt="logo CTA">
                         </div>
                         <div class="col-4">
-                            <img class="w-100  " src="img/logo-proen.png" alt="logo PROEN">
-                            <img class="w-100 " src="img/logo-ifrs.png" alt="logo IFRS">
+                            <img class="w-100 rounded" src="img/logo-proen.png" alt="logo PROEN">
+                            <img class="w-100 rounded mt-4" src="img/logo-ifrs.png" alt="logo IFRS">
                         </div>
                     </div>
                 </div>
@@ -276,16 +276,16 @@
         </div>
     </div>
 
-    <div class="container-fluid bg-ciano50" id="developed-by">
+    <div class="container-fluid bg-light" id="developed-by">
         <div class="row d-flex justify-content-center">
             <div class="py-4 text-center col-lg-10 col-md-9 col-sm-8 col-7" id="footer">
-                <p class="font-weight-bold p-0 m-0"><small>Desenvolvido por CTA - IFRS. Aplicativo sob a licença GPLv3 e
+                <p class="font-weight-bold p-0 m-0 lead-text3"><small>Desenvolvido por CTA - IFRS. Aplicativo sob a licença GPLv3 e
                         Creative Commons NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)</small></p>
             </div>
         </div>
     </div>
 
-    <a id="btn-back-to-top" href="" class="btn btn-ciano800 text-white btn-lg" role="button">
+    <a id="btn-back-to-top" href="" class="btn btn-primary btn-lg" role="button">
         <i class="bi bi-arrow-up-short"></i>
         <span class="sr-only">Voltar para o início do site</span>
     </a>

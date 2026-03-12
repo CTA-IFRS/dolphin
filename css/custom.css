@@ -1,30 +1,28 @@
-:root {
-    --ciano10: #effcfd;
-    --ciano50: #E0F7FA;
-    --primary: #026E81;
-    --secondary: #00ABBD;
-    --tertiary: #72F2EB;
-    --success: #0099DD;
-    --info: #54B4D3;
-    --warning: #FF9933;
-    --danger: #E3371E;
-    --ciano100: #B2EBF2;
-    --ciano200: #80DEEA;
-    --ciano300: #4DD0E1;
-    --ciano400: #26C6DA;
-    --ciano500: #00BCD4;
-    --ciano600: #00ACC1;
-    --ciano700: #0097A7;
-    --ciano800: #00838F;
-    --ciano900: #006064;
-    --cianoA1: #84FFFF;
-    --cianoA2: #18FFFF;
-    --cianoA3: #00E5FF;
-    --cianoA4: #00E5FF;
-    --cianoA5: #00B8D4;
-    --white: #ffffff;
-}
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+:root {
+    --success: #28A745;
+    --danger: #DC3545;
+    --warning: #FFC107;
+    --info: #17A2B8;
+    --gray100: #F8F9FA;
+    --gray200: #E9ECEF;
+    --gray300: #DEE2E6;
+    --gray400: #CED4DA;
+    --gray500: #ADB5BD;
+    --gray600: #6C757D;
+    --gray700: #495057;
+    --gray800: #343A40;
+    --gray900: #212529;
+    --white: #ffffff;
+    --black: #000000;
+    --do1: #E6F3F6;
+    --do2: #96CCD2;
+    --do3: #00838F;
+    --do4: #006064;
+    --do5: #035155;
+    --do6: #023032;
+}
 
 /* sobrescrevendo classes padrão do Bootstrap */
 
@@ -36,90 +34,230 @@
     background-color: var(--white);
 }
 
-.bg-ciano10,
-.btn-ciano10 {
-    background-color: var(--ciano10);
+.bg-gray100 {
+    background-color: var(--gray100);
 }
-
-.bg-ciano50,
-.btn-ciano50 {
-    background-color: var(--ciano50);
+body {
+    background-color: var(--gray100)
 }
-
-.bg-ciano100,
-.btn-ciano100 {
-    background-color: var(--ciano100);
+.btn-primary {
+    background-color: var(--do4);
+    border-color: var(--do4);
 }
-
-.bg-ciano200,
-.btn-ciano200 {
-    background-color: var(--ciano200);
+.btn-primary:hover,
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle,
+.btn-primary.focus, .btn-primary:focus {
+    background-color: var(--do6);
+    border-color: var(--do6);
 }
-
-.bg-ciano300,
-.btn-ciano300 {
-    background-color: var(--ciano300);
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus,
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 .2rem var(--do2) !important;
 }
-
-.bg-ciano400,
-.btn-ciano400 {
-    background-color: var(--ciano400);
+nav.barra-acessibilidade {
+    background-color: var(--gray200);
+    position: relative;
+    z-index: 2;
 }
-
-.bg-ciano500,
-.btn-ciano500 {
-    background-color: var(--ciano500);
+.bg-light {
+    background-color: var(--white) !important;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.12);
 }
-
-.bg-ciano600,
-.btn-ciano600 {
-    background-color: var(--ciano600);
+.text-dark {
+    color: var(--gray800) !important;
 }
-
-.bg-ciano700,
-.btn-ciano700 {
-    background-color: var(--ciano700);
+.navbar-light .navbar-nav .nav-link {
+    color: var(--gray700);
 }
-
-.bg-ciano800,
-.btn-ciano800 {
-    background-color: var(--ciano800);
+.navbar-light .navbar-brand,
+body {
+    color: var(--gray900);
 }
-
-.bg-ciano900,
-.btn-ciano900 {
-    background-color: var(--ciano900);
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 700;
+    color: var(--gray900);
 }
-
-.bg-cianoA1,
-.btn-cianoA1 {
-    background-color: var(--cianoA1);
+.h1 {
+    font-size: 40px;
 }
-
-.bg-cianoA2,
-.btn-cianoA2 {
-    background-color: var(--cianoA2);
+.h2 {
+    font-size: 32px;
 }
-
-.bg-cianoA3,
-.btn-cianoA3 {
-    background-color: var(--cianoA3);
+.h3 {
+    font-size: 28px;
 }
-
-.bg-cianoA4,
-.btn-cianoA4 {
-    background-color: var(--cianoA4);
+.h4 {
+    font-size: 24px;
 }
-
-.bg-cianoA5,
-.btn-cianoA5 {
-    background-color: var(--cianoA5);
+.h5 {
+    font-size: 20px;
 }
-
+.h6 {
+    font-size: 16px;
+}
+.base-text {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--gray600);
+}
+.lead-text {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 34px;
+    color: var(--gray600);
+}
+.base-text2 {
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--gray700);
+}
+.lead-text2 {
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 34px;
+    color: var(--gray700);
+}
+.lead-text3 {
+    font-family: "Nunito", sans-serif;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 34px;
+    color: var(--gray700);
+}
+.strong-text2 {
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 28px;
+    color: var(--gray900);
+}
+.small-text {
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
 .nav-link {
-    color: var(--primary);
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--gray700);
 }
-
-.nav-link:hover {
-    color: var(--warning);
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.focus {
+    color: var(--gray900);
+}
+.btn {
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 50rem;
+    width: auto !important;
+    padding: 10px 26px !important;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+}
+.btn.btn-fit {
+    width: fit-content !important;
+}
+.btn.btn-primary,
+.btn.btn-secondary.active,
+.btn.btn-secondary:hover,
+.btn.btn-secondary:focus,
+.btn.btn-outline.active,
+.btn.btn-outline:hover,
+.btn.btn-outline:focus {
+    background-color: var(--do4) !important;
+    color: var(--white) !important;
+}
+.btn.btn-primary.active,
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+    background-color: var(--do6) !important;
+}
+.btn.btn-secondary {
+    background-color: var(--do1) !important;
+    color: var(--do5) !important;
+}
+.btn.btn-outline {
+    background-color: transparent !important;
+    color: var(--do4) !important;
+    border: 1px solid var(--do4);
+    box-sizing: border-box;
+}
+.btn.btn-primary.btn-gray.active,
+.btn.btn-primary.btn-gray:hover,
+.btn.btn-primary.btn-gray:focus,
+.btn.btn-secondary.btn-gray.active,
+.btn.btn-secondary.btn-gray:hover,
+.btn.btn-secondary.btn-gray:focus,
+.btn.btn-outline.btn-gray.active,
+.btn.btn-outline.btn-gray:hover,
+.btn.btn-outline.btn-gray:focus {
+    background-color: var(--gray800) !important;
+    color: var(--white) !important;
+}
+.btn.btn-primary.btn-gray {
+    background-color: var(--gray700) !important;
+    color: var(--white) !important;
+}
+.btn.btn-secondary.btn-gray {
+    background-color: var(--gray200) !important;
+    color: var(--gray900) !important;
+}
+.btn.btn-outline.btn-gray {
+    background-color: transparent !important;
+    color: var(--gray800) !important;
+    border: 1px solid var(--gray800);
+    box-sizing: border-box;
+}
+.btn-dark {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+}
+.btn-dark:hover {
+    color: #fff;
+    background-color: #23272b;
+    border-color: #1d2124;
+}
+.btn-dark:not(:disabled):not(.disabled).active, .btn-dark:not(:disabled):not(.disabled):active, .show > .btn-dark.dropdown-toggle {
+    color: #fff;
+    background-color: #1d2124;
+    border-color: #171a1d;
+}
+.btn-dark.focus, .btn-dark:focus {
+    color: #fff;
+    background-color: #23272b;
+    border-color: #1d2124;
+    box-shadow: 0 0 0 .2rem rgba(82,88,93,.5);
+}
+#btn-back-to-top {
+    padding: 6px 13px !important;
+    font-size: 1.7rem;
+}
+.navbar-toggler {
+    padding: 8px;
+    font-size: 18px;
+}
+.navbar-toggler {
+  color: #54595E !important;
+  border-color: var(--gray400) !important;
+}
+.navbar-toggler-icon {
+    filter: brightness(0);
+}
+.text-gray700 {
+    color: var(--gray700);
 }
