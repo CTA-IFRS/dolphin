@@ -255,9 +255,14 @@ body {
   color: #54595E !important;
   border-color: var(--gray400) !important;
 }
-.navbar-toggler-icon {
+.navbar-toggler-icon:not(.bg-dark .navbar-toggler-icon) {
     filter: brightness(0);
 }
 .text-gray700 {
     color: var(--gray700);
+}
+.fa-sr-only, .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
 }
