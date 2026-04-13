@@ -10,7 +10,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Pause from "@material-ui/icons/Pause";
 import VolumeUpOutlinedIcon from '@material-ui/icons/VolumeUpOutlined';
 
-const DATA = [];
+const DATA = [
+    Message("Bem-vindo ao Dolphin!", "listen")
+];
 
 const useStyles = makeStyles((theme) => ({
     messagesBox:{

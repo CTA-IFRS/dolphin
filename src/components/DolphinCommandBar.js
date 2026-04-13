@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import { TextField, Button, Box } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles";
@@ -120,11 +120,49 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 
+    form: {
+        position: "relative"
+    },
+
+    initialTooltip: {
+        position: "absolute",
+        zIndex: 99,
+        top: "-100px",
+        left: "15px",
+        display: "flex",
+        flexDirection: "column"
+    },
+
+    backgroundTooltip: {
+        backgroundColor: theme.palette.primaryButton.main,
+        padding: 20,
+        paddingTop: 15,
+        paddingBottom: 15,
+        borderRadius: 8,
+        "& p": {
+            color: theme.palette.primaryButton.text,
+            fontSize: "19px",
+            lineHeigth: "30px",
+            margin: 0
+        }
+    },
+
+    arrowDown: {
+        width: 0,
+        height: 0,
+        borderLeft: "12px solid transparent",
+        borderRight: "12px solid transparent",
+        borderTop: "11px solid",
+        borderTopColor: theme.palette.primaryButton.main,
+        marginTop: -1,
+        marginLeft: 20,
+    }
 }));
 
 export default function DolphinCommandBar(props) {
     const classes = useStyles();
     const inputMsgRef = useRef(null);
+    const [initialTooltip, setInitialTooltip] = useState(true);
 
     function onAction(ev) {
         if (inputMsgRef.current.value !== "") {
@@ -158,7 +196,16 @@ export default function DolphinCommandBar(props) {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={classes.form}>
+                {initialTooltip && (
+                    <div className={classes.initialTooltip}>
+                        <div className={classes.backgroundTooltip}>
+                            <p>Deseja escrever algo?</p>
+                            <p><strong>Digite aqui!</strong></p>
+                        </div>
+                        <span className={classes.arrowDown}></span>
+                    </div>
+                )}
                 <Box display="grid" gridTemplateColumns={talkerMonitor.talker.hasSupport() ? {xs: "1fr 48px", sm: "1fr 193px"} : "1fr"}>
                     <Box display="flex" flexDirection="row">
                         <TextField id="input-message" label="Digite sua fala"
@@ -166,6 +213,7 @@ export default function DolphinCommandBar(props) {
                             className={classes.root}
                             variant="outlined"
                             size="small"
+                            onChange={() => setInitialTooltip(false)}
                         />
                         <Button fullWidth variant="contained" size="large" disableElevation
                             onClick={onAction}
